@@ -89,7 +89,7 @@ export default function Navbar() {
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16 ">
         <div className={style.titles}>
           {/* <Image src="/assets/logo5.png" alt="Logo" width="125" height="50" /> */}
-          <h1 className="font-vt323 font-bold text-2xl sm:text-3xl md:text-4xl">
+          <h1 className="font-vt323 font-bold text-2xl sm:text-xl md:text-3xl">
             {" <Pablo Levy /> "}
           </h1>
         </div>
