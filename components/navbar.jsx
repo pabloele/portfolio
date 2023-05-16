@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import style from "./navbar.module.css";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
@@ -19,17 +20,21 @@ export default function Navbar() {
         <div
           className={
             nav
-              ? " fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-500"
+              ? " fixed left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-[#ecf0f3] p-10 ease-in duration-200"
               : "fixed left-[100-%] top-0 p-10 ease-in duration-500 "
           }>
           <div className={nav ? "" : "hidden"}>
-            <div className="flex w-full items-center justify-between">
-              <Image
-                src="/assets/logo4.png"
+            <div className="flex w-full items-center justify-between rounded-md">
+              <h1 className={style.titles}>
+                {/* Pablo Levy */}
+                {" < /> "}
+              </h1>
+              {/* <Image
+                src="/assets/logo5.png"
                 alt="Logo"
                 width="87"
                 height="35"
-              />
+              /> */}
               <div
                 className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer"
                 onClick={handleNav}>
@@ -37,12 +42,14 @@ export default function Navbar() {
               </div>
             </div>
             <div className="border-b border-gray-300 my-4">
-              <p className="w-[85%] md-w-[90%] py-4">
-                Fullstack web developer - React - Javascript - node
-              </p>
+              <div className={style.titles}>
+                <p className="w-[85%] md-w-[90%] py-4 uppercase font-extrabold">
+                  Fullstack web developer
+                </p>
+              </div>
             </div>
-            <div className="py-4 flex flex-col">
-              <ul className="uppercase">
+            <div className="py-4 flex flex-col uppercase font-extrabold">
+              <ul className={style.titles}>
                 <Link href="/">
                   <li className="py-4 text-sm">Home</li>
                 </Link>
@@ -58,19 +65,19 @@ export default function Navbar() {
               </ul>
               <div className="pt-10">
                 <p className="uppercase tracking-widest text-[#5651e5]">
-                  Contactemos
+                  Mis redes
                 </p>
                 <div className="flex items-left justify-between my-4 w-full sm:w-[80%]">
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500">
+                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
                     <FaLinkedinIn />
                   </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500">
+                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
                     <FaGithub />
                   </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500">
+                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
                     <AiOutlineMail />
                   </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-500">
+                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
                     <BsFillPersonLinesFill />
                   </div>
                 </div>
@@ -80,8 +87,11 @@ export default function Navbar() {
         </div>
       </div>
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16 ">
-        <div>
-          <Image src="/assets/logo4.png" alt="Logo" width="125" height="50" />
+        <div className={style.titles}>
+          {/* <Image src="/assets/logo5.png" alt="Logo" width="125" height="50" /> */}
+          <h1 className="font-vt323 font-bold text-2xl sm:text-3xl md:text-4xl">
+            {" <Pablo Levy /> "}
+          </h1>
         </div>
 
         <div className="flex-grow">
