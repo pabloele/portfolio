@@ -12,7 +12,7 @@ export default function Navbar() {
     setNav(!nav);
   };
   return (
-    <div className="fixed w-full h-20 shadow-xl z-[100]  ">
+    <div className="fixed w-full h-20 bg-[#ecf0f3] shadow-xl z-[100]  ">
       <div
         className={
           nav ? "fixed left-0 w-full h-full bg-black/70 md:hidden" : ""
