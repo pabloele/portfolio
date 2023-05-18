@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <div className="w-full md:hscreen p-2 flex flex-col md:flex-row items-center py-16">
+    <div className="w-full md:hscreen p-2 flex flex-col md:flex-row items-center py-16 pb-64">
       <div className="max-w-[1240px] m-auto md:flex md:gap-8">
         <div className="md:w-1/3 mt-4 md:mt-0 md:pl-8 flex justify-center ">
           <div className="w-[200px] h-[200px] shadow-xl shadow-gray-400 rounded-full overflow-hidden hover:scale-110 ease-in duration-300">

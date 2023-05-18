@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function Skills() {
   return (
-    <div className="w-full lg:h-screen p-2">
-      <div className="max-w-[1248] mx-auto flex-col justify-center h-full">
+    <div className="w-full lg:h-screen p-2 mx-5">
+      <div className="max-w-[1248] mx-60 flex-col justify-center h-full">
         <p className="text-xl -tracking-widest uppercase text-[#5651e5]">
           SKILLS
         </p>
