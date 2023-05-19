@@ -6,6 +6,7 @@ import Main from "@/components/main";
 import About from "@/components/about";
 import Skills from "@/components/skills";
 import Proyects from "@/components/proyects";
+import Contact from "@/components/contact";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -125,13 +126,12 @@ export default function Home() {
         <meta name="" content=""></meta>
         <link rel="icon" href="/favicon.ico"></link>
       </Head>
-      <div>
-        <Navbar />
-        <Main />
-        <About />
-        <Skills />
-        <Proyects />
-      </div>
+      <Navbar />
+      <Main />
+      <About />
+      <Skills />
+      <Proyects />
+      <Contact />
     </>
   );
 }

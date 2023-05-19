@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import style from "./navbar.module.css";
@@ -8,11 +8,34 @@ import { BsFillPersonLinesFill } from "react-icons/bs";
 import { useState } from "react";
 export default function Navbar() {
   const [nav, setNav] = useState(false);
+  const [shadow, setShadow] = useState(false);
   const handleNav = () => {
     setNav(!nav);
   };
+  useEffect(() => {
+    const handleShadow = () => {
+      if (window.scrollY >= 90) {
+        setShadow(true);
+      } else {
+        setShadow(false);
+      }
+    };
+    window.addEventListener("scroll", handleShadow);
+  }, []);
+
   return (
-    <div className="fixed w-full h-20 bg-[#ecf0f3] shadow-xl z-[100]  ">
+    // <div className="fixed w-full h-20 bg-[#ecf0f3] shadow-xl z-[100]  ">
+    // className={
+    //   shadow
+    //     ? "fixed w-full h-20 bg-[#ecf0f3] shadow-xl z-[100] opacity-70"
+    //     : "fixed w-full h-20 bg-[#ecf0f3] z-[100] "
+    // }>
+    <div
+      className={
+        shadow
+          ? "fixed w-full h-20 bg-[#ecf0f3] shadow-xl z-[100] "
+          : "fixed w-full h-20  z-[100] "
+      }>
       <div
         className={
           nav ? "fixed left-0 w-full h-full bg-black/70 md:hidden" : ""
@@ -89,7 +112,7 @@ export default function Navbar() {
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16 ">
         <div className={style.titles}>
           {/* <Image src="/assets/logo5.png" alt="Logo" width="125" height="50" /> */}
-          <h1 className="font-vt323 font-bold text-2xl sm:text-xl md:text-3xl">
+          <h1 className="font-vt323 py-10 font-bold text-2xl sm:text-xl md:text-3xl">
             {" <Pablo Levy /> "}
           </h1>
         </div>

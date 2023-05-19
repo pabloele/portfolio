@@ -4,9 +4,9 @@ import Image from "next/image";
 export default function Skills() {
   return (
     <div className="w-full lg:h-screen p-2 mx-5">
-      <div className="max-w-[1248] mx-60 flex-col justify-center h-full">
+      <div className="max-w-[1248]  flex-col justify-center h-full md: mx-10 xl:mx-60 ">
         <p className="text-xl -tracking-widest uppercase text-[#5651e5]">
-          SKILLS
+          {" < SKILLS />"}
         </p>
         <h2 py-4>What i can do</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
