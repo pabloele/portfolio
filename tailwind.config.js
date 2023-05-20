@@ -16,6 +16,7 @@ module.exports = {
   },
   variants: {
     extend: {
+      scrollBehavior: ["motion-safe", "motion-reduce", "responsive"],
       fontFamily: ["responsive", "hover", "focus"],
     },
   },

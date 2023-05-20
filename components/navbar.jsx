@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "react-scroll";
 import style from "./navbar.module.css";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
@@ -13,7 +13,8 @@ export default function Navbar() {
     setNav(!nav);
   };
   useEffect(() => {
-    const handleShadow = () => {
+    const handleShadow = (e) => {
+      e.preventDefault();
       if (window.scrollY >= 90) {
         setShadow(true);
       } else {
@@ -73,18 +74,86 @@ export default function Navbar() {
             </div>
             <div className="py-4 flex flex-col uppercase font-extrabold">
               <ul className={style.titles}>
-                <Link href="/">
+                <li className="py-4 text-sm uppercase hover:border-b">
+                  <Link
+                    to="main"
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={100}
+                    onSetActive={() => {
+                      setNav(false);
+                    }}>
+                    Home
+                  </Link>
+                </li>
+                <li className="py-4 text-sm uppercase hover:border-b">
+                  <Link
+                    to="about"
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={100}
+                    onSetActive={() => {
+                      setNav(false);
+                    }}>
+                    About
+                  </Link>
+                </li>
+                <li className="py-4 text-sm uppercase hover:border-b">
+                  <Link
+                    to="skills"
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={100}
+                    onSetActive={() => {
+                      setNav(false);
+                    }}>
+                    Skills
+                  </Link>
+                </li>
+                <li className="py-4 text-sm uppercase hover:border-b">
+                  <Link
+                    to="proyects"
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={100}
+                    onSetActive={() => {
+                      setNav(false);
+                    }}>
+                    Proyectos
+                  </Link>
+                </li>
+                <li className="py-4 text-sm uppercase hover:border-b">
+                  <Link
+                    to="contact"
+                    spy={true}
+                    smooth={true}
+                    offset={0}
+                    duration={100}
+                    onSetActive={() => {
+                      setNav(false);
+                    }}>
+                    Contacto
+                  </Link>
+                </li>
+                {/* <Link href="/">
                   <li className="py-4 text-sm">Home</li>
                 </Link>
-                <Link href="/">
+                <Link href="/#about">
                   <li className="py-4 text-sm">About</li>
                 </Link>
-                <Link href="/">
+                <Link href="/#skills">
                   <li className="py-4 text-sm">Proyectos</li>
                 </Link>
-                <Link href="/">
+                <Link href="/#proyects">
                   <li className="py-4 text-sm">Skills</li>
                 </Link>
+                <Link href="/#contact">
+                  <li className="py-4 text-sm">Contact</li>
+                </Link> */}
               </ul>
               <div className="pt-10">
                 <p className="uppercase tracking-widest text-[#5651e5]">
@@ -119,22 +188,47 @@ export default function Navbar() {
 
         <div className="flex-grow">
           <ul className="ld:flex justify-end px-7  md:flex hidden  ">
-            <Link href="/">
-              <li className="ml-10 text-sm uppercase hover:border-b">Home</li>
-            </Link>
-            <Link href="/">
-              <li className="ml-10 text-sm uppercase hover:border-b">About</li>
-            </Link>
-            <Link href="/">
-              <li className="ml-10 text-sm uppercase hover:border-b">
+            <li className="ml-10 text-sm uppercase hover:border-b scroll-smooth">
+              <Link
+                to="main"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={100}>
+                Home
+              </Link>
+            </li>
+            <li className="ml-10 text-sm uppercase hover:border-b scroll-smooth">
+              <Link
+                to="about"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={100}>
+                About
+              </Link>
+            </li>
+
+            <li className="ml-10 text-sm uppercase hover:border-b">
+              <Link
+                to="proyects"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={100}>
                 Proyectos
-              </li>
-            </Link>
-            <Link href="/">
-              <li className="ml-10 text-sm uppercase hover:border-b">
+              </Link>
+            </li>
+            <li className="ml-10 text-sm uppercase hover:border-b">
+              <Link
+                to="contact"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={100}>
                 Contacto
-              </li>
-            </Link>
+              </Link>
+            </li>
           </ul>
         </div>
         <div onClick={handleNav} className="md:hidden float-right px-7">
