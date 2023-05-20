@@ -48,10 +48,19 @@ export default function Navbar() {
               : "fixed left-[100-%] top-0 p-10 ease-in duration-500 "
           }>
           <div className={nav ? "" : "hidden"}>
-            <div className="flex w-full items-center justify-between rounded-md">
+            <div className="flex w-full items-center justify-between rounded-md cursor-pointer">
               <h1 className={style.titles}>
-                {/* Pablo Levy */}
-                {" < /> "}
+                <Link
+                  to="main"
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  duration={100}
+                  onSetActive={() => {
+                    setNav(false);
+                  }}>
+                  {" < /> "}
+                </Link>
               </h1>
               {/* <Image
                 src="/assets/logo5.png"
@@ -181,8 +190,10 @@ export default function Navbar() {
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16 ">
         <div className={style.titles}>
           {/* <Image src="/assets/logo5.png" alt="Logo" width="125" height="50" /> */}
-          <h1 className="font-vt323 py-10 font-bold text-2xl sm:text-xl md:text-3xl">
-            {" <Pablo Levy /> "}
+          <h1 className="font-vt323 py-10 font-bold text-2xl sm:text-xl md:text-3xl cursor-pointer">
+            <Link to="main" spy={true} smooth={true} offset={0} duration={100}>
+              {" <Pablo Levy /> "}
+            </Link>
           </h1>
         </div>
 
