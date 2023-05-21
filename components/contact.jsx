@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import Link from "next/link";
@@ -6,11 +6,51 @@ import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
 import Image from "next/image";
 import contactImg from "../public/assets/contactus.jpg";
+import { useState } from "react";
+import emailjs from "emailjs-com";
+
 export default function Contact() {
+  const form = useRef();
+
+  const sendEmail = (e, mail_service, mail_template, mail_key) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_DB_MAIL_SERVICE,
+        process.env.NEXT_PUBLIC_MAIL_TEMPLATE,
+        form.current,
+        process.env.NEXT_PUBLIC_DB_MAIL_KEY
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+  const [formData, setFormData] = useState({
+    user_name: "",
+    phone: "",
+    user_email: "",
+    subject: "",
+    message: "",
+  });
+  const handleInputChange = (e) => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
   return (
     <div id="contact" className="w-full light-screen pt-10">
       <div className="max-w-[1240px] m-auto px-2 py-16  ">
-        <div className="flex flex-col ml-10">
+        <div
+          className="flex flex-col ml-4
+        ">
           <p className="text-xl uppercase text-[#5651e5] ">Contacto</p>
           <h2 className="py-4 ">Let´s talk</h2>
         </div>
@@ -22,7 +62,7 @@ export default function Contact() {
                 <Image
                   src={contactImg}
                   alt="/"
-                  cover
+                  cover="true"
                   className="rounded-xl hover:scale-105 ease-in duration-300 "
                 />
               </div>
@@ -57,13 +97,15 @@ export default function Contact() {
           {/* right */}
           <div className="col-span-2 lg:col-span-3 w-full h-auto lg:h-full shadow-xl shadow-gray-400 rounded-xl p-4 overflow-y-auto">
             <div className="flex flex-col gap-4">
-              <form>
+              <form ref={form} onSubmit={sendEmail}>
                 <div className="flex flex-col">
                   <label className="uppercase text-sm py-2">Nombre</label>
                   <input
                     className="border-2 rounded-lg p-3 flex border-gray-300"
                     type="text"
-                    name="name"
+                    name="user_name"
+                    value={formData.user_name}
+                    onChange={handleInputChange}
                   />
                 </div>
                 <div className="flex flex-col">
@@ -74,6 +116,8 @@ export default function Contact() {
                     className="border-2 rounded-lg p-3 flex border-gray-300"
                     type="text"
                     name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
                   />
                 </div>
                 <div className="flex flex-col">
@@ -81,7 +125,9 @@ export default function Contact() {
                   <input
                     className="border-2 rounded-lg p-3 flex border-gray-300"
                     type="text"
-                    name="email"
+                    name="user_email"
+                    value={formData.user_email}
+                    onChange={handleInputChange}
                   />
                 </div>
                 <div className="flex flex-col">
@@ -90,6 +136,8 @@ export default function Contact() {
                     className="border-2 rounded-lg p-3 flex border-gray-300"
                     type="text"
                     name="subject"
+                    value={formData.subject}
+                    onChange={handleInputChange}
                   />
                 </div>
                 <div className="flex flex-col">
@@ -97,69 +145,19 @@ export default function Contact() {
                   <textarea
                     className="border-2 rounded-lg p-3 border-gray-300"
                     rows="10"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
                   />
                 </div>
-                <button className="w-full p-4 text-gray-100 mt-4">
+                <button
+                  // type="submit"
+                  className="w-full p-4 text-gray-100 mt-4">
                   Enviar Mensaje
                 </button>
               </form>
             </div>
           </div>
-
-          {/* <div className="col-span-2 lg:col-span-3 w-full h-auto lg:h-full shadow-xl shadow-gray-400 rounded-xl p-4"> */}
-          {/* <div className="col-span-2 lg:col-span-3 w-full h-auto lg:h-full shadow-xl shadow-gray-400 rounded-xl p-4 overflow-y-auto">
-            <div className="flex flex-col">
-              <form>
-                <div className="grid md:grid-cols-2 gap-4 w-full py-2">
-                  <div className="flex flex-col">
-                    <label className="uppercase text-sm py-2"> Nombre</label>
-                    <input
-                      className="border-2 rounded-lg p-3 flex border-gray-300"
-                      type="text"
-                      name="name"
-                    />
-                  </div>
-                  <div className="flex flex-col">
-                    <label className="uppercase text-sm py-2">
-                      Número de teléfono
-                    </label>
-                    <input
-                      className="border-2 rounded-lg p-3 flex border-gray-300"
-                      type="text"
-                      name="phone"
-                    />
-                  </div>
-
-                  <div className="flex flex-col col-span-2">
-                    <label className="uppercase text-sm py-2"> email</label>
-                    <input
-                      className="border-2 rounded-lg p-3 flex border-gray-300"
-                      type="text"
-                      name="email"
-                    />
-                  </div>
-                  <div className="flex flex-col col-span-2">
-                    <label className="uppercase text-sm py-2"> Subject</label>
-                    <input
-                      className="border-2 rounded-lg p-3 flex border-gray-300"
-                      type="text"
-                      name="subject"
-                    />
-                  </div>
-                  <div className="flex flex-col col-span-2 py-2">
-                    <label className="uppercase text-sm py-2"> Mensaje</label>
-                    <textarea
-                      className="border-2 rounded-lg p-3 border-gray-300"
-                      rows="10"
-                    />
-                  </div>
-                </div>
-                <button className="w-full p-4 text-gray-100 mt-4">
-                  Enviar Mensaje
-                </button>
-              </form>
-            </div>
-          </div> */}
         </div>
       </div>
       <div className="flex justify-center py-6">

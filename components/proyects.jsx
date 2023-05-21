@@ -5,16 +5,14 @@ import pokemonImg from "../public/assets/proyects/pokemon.png";
 import Link from "next/link";
 export default function Proyects() {
   return (
-    <div
-      id="proyects"
-      className="w-full justify-center pt-40 pb-60 mx-auto md:mx-10 xl:mx-[390px] ">
-      <div className="w-full m-auto flex flex-col ">
-        <p className="text-xl tracking-widest uppercase text-[#5651e5] text-left">
-          Proyectos
-        </p>
-        <h2 className="text-left">Destacados</h2>
-      </div>
-      <div className="max-w-[1240px]  py-10 justify-center ">
+    <div id="proyects" className="w-full justify-center pt-40 pb-60 mx-auto ">
+      <div className="max-w-[1240px]  py-10 justify-center mx-auto">
+        <div className="w-full pl-4  ">
+          <p className="text-xl tracking-widest uppercase text-[#5651e5] text-left pb-4">
+            Proyectos
+          </p>
+          <h2 className="text-left">Destacados</h2>
+        </div>
         <div className="grid w-[100%] md:grid-cols-2 gap-8 ">
           <div className="relative flex items-center justify-center shadow-xl shadow-gray-400 rounded-xl p-4 group hover:bg-gradient-to-r from-[#5651d5] to-[#709dff]">
             <Image
@@ -29,7 +27,7 @@ export default function Proyects() {
               <p className="pb-4 pt-2 text-white text-center">
                 Next Js - Express - Postgresql - Firebase
               </p>
-              <Link href="https://www.youtube.com/watch?v=y2llAQlPcPE">
+              <Link href="/mecanu">
                 <p className="text-center py-3 rounded-lg bg-white text-gray-700 font-bold text-lg cursor-pointer">
                   Ver más
                 </p>
@@ -51,12 +49,7 @@ export default function Proyects() {
                 React - Express - Postgresql - Firebase
               </p>
               <p className="text-center py-3 rounded-lg bg-white text-gray-700 font-bold text-lg cursor-pointer">
-                <Link
-                  href="https://www.youtube.com/watch?v=y2llAQlPcPE"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  Ver más
-                </Link>
+                <Link href="/pokemon">Ver más</Link>
               </p>
             </div>
           </div>

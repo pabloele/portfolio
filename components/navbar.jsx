@@ -6,13 +6,24 @@ import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { useState } from "react";
+import { useRouter } from "next/router";
 export default function Navbar() {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
+  const [navBg, setNavbg] = useState("#ecf0f3");
+  const [linkColor, setLinkColor] = useState("#1f2937");
+  const router = useRouter();
   const handleNav = () => {
     setNav(!nav);
   };
   useEffect(() => {
+    if (router.asPath === "/mecanu" || router.asPath === "/pokemon") {
+      setNavbg("transparent");
+      setLinkColor("#ecf0f3");
+    } else {
+      setNavbg("#ecf0f3");
+      setLinkColor("#1f2937");
+    }
     const handleShadow = (e) => {
       e.preventDefault();
       if (window.scrollY >= 90) {
@@ -22,19 +33,24 @@ export default function Navbar() {
       }
     };
     window.addEventListener("scroll", handleShadow);
-  }, []);
+  }, [router]);
+  const handleDefaultMail = () => {
+    const email = "pabloelevy@gmail.com";
+    const subject = "";
+    const body = "";
 
+    const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoUrl;
+  };
   return (
-    // <div className="fixed w-full h-20 bg-[#ecf0f3] shadow-xl z-[100]  ">
-    // className={
-    //   shadow
-    //     ? "fixed w-full h-20 bg-[#ecf0f3] shadow-xl z-[100] opacity-70"
-    //     : "fixed w-full h-20 bg-[#ecf0f3] z-[100] "
-    // }>
     <div
+      style={{ backgroundColor: `${navBg}` }}
       className={
         shadow
-          ? "fixed w-full h-20 bg-[#ecf0f3] shadow-xl z-[100] "
+          ? "fixed w-full h-20 shadow-xl z-[100] "
           : "fixed w-full h-20  z-[100] "
       }>
       <div
@@ -50,7 +66,7 @@ export default function Navbar() {
           <div className={nav ? "" : "hidden"}>
             <div className="flex w-full items-center justify-between rounded-md cursor-pointer">
               <h1 className={style.titles}>
-                <Link
+                {/* <Link
                   to="main"
                   spy={true}
                   smooth={true}
@@ -60,14 +76,16 @@ export default function Navbar() {
                     setNav(false);
                   }}>
                   {" < /> "}
-                </Link>
+                </Link> */}
+                <a
+                  href="/#main"
+                  onClick={() => {
+                    setNav(false);
+                  }}>
+                  {" < /> "}
+                </a>
               </h1>
-              {/* <Image
-                src="/assets/logo5.png"
-                alt="Logo"
-                width="87"
-                height="35"
-              /> */}
+
               <div
                 className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer"
                 onClick={handleNav}>
@@ -84,8 +102,8 @@ export default function Navbar() {
             <div className="py-4 flex flex-col uppercase font-extrabold">
               <ul className={style.titles}>
                 <li className="py-4 text-sm uppercase hover:border-b">
-                  <Link
-                    to="main"
+                  {/* <Link
+                    to="/#main"
                     spy={true}
                     smooth={true}
                     offset={0}
@@ -94,11 +112,18 @@ export default function Navbar() {
                       setNav(false);
                     }}>
                     Home
-                  </Link>
+                  </Link> */}
+                  <a
+                    href="/#main"
+                    onClick={() => {
+                      setNav(false);
+                    }}>
+                    {"Home"}
+                  </a>
                 </li>
                 <li className="py-4 text-sm uppercase hover:border-b">
-                  <Link
-                    to="about"
+                  {/* <Link
+                    to="/#about"
                     spy={true}
                     smooth={true}
                     offset={0}
@@ -107,11 +132,18 @@ export default function Navbar() {
                       setNav(false);
                     }}>
                     About
-                  </Link>
+                  </Link> */}
+                  <a
+                    href="/#about"
+                    onClick={() => {
+                      setNav(false);
+                    }}>
+                    {"About"}
+                  </a>
                 </li>
                 <li className="py-4 text-sm uppercase hover:border-b">
-                  <Link
-                    to="skills"
+                  {/* <Link
+                    to="/#skills"
                     spy={true}
                     smooth={true}
                     offset={0}
@@ -120,11 +152,18 @@ export default function Navbar() {
                       setNav(false);
                     }}>
                     Skills
-                  </Link>
+                  </Link> */}
+                  <a
+                    href="/#skills"
+                    onClick={() => {
+                      setNav(false);
+                    }}>
+                    {"Skills"}
+                  </a>
                 </li>
                 <li className="py-4 text-sm uppercase hover:border-b">
-                  <Link
-                    to="proyects"
+                  {/* <Link
+                    to="/#proyects"
                     spy={true}
                     smooth={true}
                     offset={0}
@@ -133,11 +172,18 @@ export default function Navbar() {
                       setNav(false);
                     }}>
                     Proyectos
-                  </Link>
+                  </Link> */}
+                  <a
+                    href="/#proyects"
+                    onClick={() => {
+                      setNav(false);
+                    }}>
+                    {"Proyectos"}
+                  </a>
                 </li>
                 <li className="py-4 text-sm uppercase hover:border-b">
-                  <Link
-                    to="contact"
+                  {/* <Link
+                    to="/#contact"
                     spy={true}
                     smooth={true}
                     offset={0}
@@ -146,7 +192,14 @@ export default function Navbar() {
                       setNav(false);
                     }}>
                     Contacto
-                  </Link>
+                  </Link> */}
+                  <a
+                    href="/#contact"
+                    onClick={() => {
+                      setNav(false);
+                    }}>
+                    {"Contacto"}
+                  </a>
                 </li>
                 {/* <Link href="/">
                   <li className="py-4 text-sm">Home</li>
@@ -170,12 +223,24 @@ export default function Navbar() {
                 </p>
                 <div className="flex items-left justify-between my-4 w-full sm:w-[80%]">
                   <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
-                    <FaLinkedinIn />
+                    <a
+                      href="https://www.linkedin.com/in/pabloelevy/"
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      <FaLinkedinIn />
+                    </a>
                   </div>
                   <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
-                    <FaGithub />
+                    <a
+                      href="https://github.com/pabloele"
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      <FaGithub />
+                    </a>
                   </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
+                  <div
+                    className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200"
+                    onClick={handleDefaultMail}>
                     <AiOutlineMail />
                   </div>
                   <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
@@ -190,55 +255,70 @@ export default function Navbar() {
       <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16 ">
         <div className={style.titles}>
           {/* <Image src="/assets/logo5.png" alt="Logo" width="125" height="50" /> */}
-          <h1 className="font-vt323 py-10 font-bold text-2xl sm:text-xl md:text-3xl cursor-pointer">
-            <Link to="main" spy={true} smooth={true} offset={0} duration={100}>
-              {" <Pablo Levy /> "}
-            </Link>
+          <h1
+            className="font-vt323 py-10 font-bold text-2xl sm:text-xl md:text-3xl cursor-pointer"
+            style={{ color: `${linkColor}` }}>
+            {/* <Link to="main" spy={true} smooth={true} offset={0} duration={100}>
+            </Link> */}
+            <a href="/#main">{" <Pablo Levy /> "}</a>
           </h1>
         </div>
 
         <div className="flex-grow">
-          <ul className="ld:flex justify-end px-7  md:flex hidden  ">
+          <ul
+            style={{ color: `${linkColor}` }}
+            className="ld:flex justify-end px-7  md:flex hidden ">
             <li className="ml-10 text-sm uppercase hover:border-b scroll-smooth">
-              <Link
-                to="main"
+              {/* <Link
+                to="/#main"
                 spy={true}
                 smooth={true}
                 offset={0}
                 duration={100}>
-                Home
-              </Link>
+              </Link> */}
+              <a href="/#main">Home</a>
             </li>
-            <li className="ml-10 text-sm uppercase hover:border-b scroll-smooth">
-              <Link
-                to="about"
+            <li className="ml-10 text-sm uppercase hover:border-b scroll-smooth ">
+              {/* <Link
+                to="/#about"
                 spy={true}
                 smooth={true}
                 offset={0}
                 duration={100}>
-                About
-              </Link>
-            </li>
-
-            <li className="ml-10 text-sm uppercase hover:border-b">
-              <Link
-                to="proyects"
-                spy={true}
-                smooth={true}
-                offset={0}
-                duration={100}>
-                Proyectos
-              </Link>
+              </Link> */}
+              <a href="/#about">About</a>
             </li>
             <li className="ml-10 text-sm uppercase hover:border-b">
-              <Link
-                to="contact"
+              {/* <Link
+                to="/#contact"
                 spy={true}
                 smooth={true}
                 offset={0}
                 duration={100}>
                 Contacto
-              </Link>
+              </Link> */}
+              <a href="/#skills">Skills</a>
+            </li>
+            <li className="ml-10 text-sm uppercase hover:border-b">
+              {/* <Link
+                to="/#proyects"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={100}>
+              </Link> */}
+              <a href="/#proyects">Proyectos</a>
+            </li>
+            <li className="ml-10 text-sm uppercase hover:border-b">
+              {/* <Link
+                to="/#contact"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={100}>
+                Contacto
+              </Link> */}
+              <a href="/#contact">Contacto</a>
             </li>
           </ul>
         </div>
