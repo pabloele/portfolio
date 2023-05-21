@@ -12,6 +12,7 @@ export default function mecanu() {
           layout="fill"
           objectFit="cover"
           src={mecanuImg}
+          alt="mecanu image"
         />
         <div className="absolute top-[70%] max-w-[1240px] w-full left-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2 px-10">
           <h2>Mecanu App</h2>
@@ -23,16 +24,16 @@ export default function mecanu() {
           <p>Mecanu Web-app</p>
           <h2>Overview</h2>
           <p>
-            Pasantía trabajando junto con un equipo en el desarrollo de la web
-            app de esta innovadora startup chilena que brinda servicios de
-            mecánica a domicilio. La aplicación permite a los usuarios
-            registrarse, seleccionar servicios para sus vehículos y recibir una
-            cotización instantánea. Como desarrollador "full stack", desempeñé
-            un papel dinámico, participando tanto en el front-end como en el
-            back-end, utilizando metodologías ágiles y tecnologías como Next.js,
-            Tailwind, Express, Postgresql, Sequelize, Firebase, Mercado Pago y
-            Sendgrid. También implementé la funcionalidad de Progressive Web App
-            (PWA).
+            {`Pasantía trabajando junto con un equipo en el desarrollo de la web
+              app de esta innovadora startup chilena que brinda servicios de
+              mecánica a domicilio. La aplicación permite a los usuarios
+              registrarse, seleccionar servicios para sus vehículos y recibir una
+              cotización instantánea. Como desarrollador "full stack", desempeñé
+              un papel dinámico, participando tanto en el front-end como en el
+              back-end, utilizando metodologías ágiles y tecnologías como Next.js,
+              Tailwind, Express, Postgresql, Sequelize, Firebase, Mercado Pago y
+              Sendgrid. También implementé la funcionalidad de Progressive Web App
+              (PWA).`}
           </p>
           <button className="px-8 py-2 mt-4 mr-8">
             <a
