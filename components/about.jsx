@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -26,11 +27,13 @@ export default function About() {
             }
           </p> */}
           <p className="py-5 text-lg">
-            ¡Bienvenido<span className="text-[25px] font-normal">@</span>! Soy
-            un desarrollador web full stack con pasión por crear aplicaciones
-            innovadoras que resuelvan problemas reales. En esta página podrás
-            navegar por mis proyectos y mis redes. Si te gusta lo que ves,
-            ¡contáctame y trabajemos juntos! =)
+            ¡Bienvenid<span className="text-[25px] font-normal">@</span>! Soy un
+            desarrollador web full stack. Actualmente estoy enfocado en
+            construir aplicaciones responsivas que resuelvan problemas reales.
+            Me apasiona integrar nuevas tecnologías a mis proyectos (you´ll
+            break it until you make it 😊). En esta página podrás navegar por
+            algunos de mis trabajos. ¿Te gusta lo que ves?
+            <Link href="/#about"> Conecta!! </Link>
           </p>
           {/* <p>Parrafo 2</p>
           <p>Parrafo 3</p> */}
