@@ -44,7 +44,28 @@ export default function Contact() {
       [e.target.name]: e.target.value,
     }));
   };
+  const handleDefaultMail = () => {
+    const email = "pabloelevy@gmail.com";
+    const subject = "";
+    const body = "";
 
+    const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoUrl;
+  };
+
+  const handleDownload = () => {
+    const fileUrl = "cv";
+
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = "Pablo_Levy_FullStack.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <div id="contact" className="w-full light-screen pt-10">
       <div className="max-w-[1240px] m-auto px-2 py-16  ">
@@ -79,15 +100,29 @@ export default function Contact() {
                 </div>
                 <div className="flex items-left justify-between py-4">
                   <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
-                    <FaLinkedinIn />
+                    <Link
+                      href="https://www.linkedin.com/in/pabloelevy/"
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      <FaLinkedinIn />
+                    </Link>
                   </div>
                   <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
-                    <FaGithub />
+                    <Link
+                      href="https://github.com/pabloele"
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      <FaGithub />
+                    </Link>
                   </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
+                  <div
+                    onClick={handleDefaultMail}
+                    className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
                     <AiOutlineMail />
                   </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
+                  <div
+                    onClick={handleDownload}
+                    className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
                     <BsFillPersonLinesFill />
                   </div>
                 </div>
