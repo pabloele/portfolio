@@ -38,7 +38,7 @@ export default function About() {
             Me apasiona integrar nuevas tecnologías a mis proyectos (you´ll
             break it until you make it 😊). En esta página podrás navegar por
             algunos de mis trabajos. ¿Te gusta lo que ves?
-            <Link href="/#about"> Conecta!! </Link>
+            <Link href="/#contact"> Conecta!! </Link>
           </p>
           {/* <p>Parrafo 2</p>
           <p>Parrafo 3</p> */}
