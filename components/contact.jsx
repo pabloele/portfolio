@@ -67,9 +67,7 @@ export default function Contact() {
     document.body.removeChild(link);
   };
   return (
-    <div
-      id="contact"
-      className="w-full light-screen pt-10 font-custom font-extrabold">
+    <div id="contact" className="w-full light-screen pt-10  font-extrabold">
       <div className="max-w-[1240px] m-auto px-2 py-16  ">
         <div
           className="flex flex-col ml-4

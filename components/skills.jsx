@@ -1,11 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import style from "./skills.module.css";
+
 export default function Skills() {
   return (
-    <div
-      id="skills"
-      className="w-full  p-2 sm:mx-5 pt-24 font-custom font-extrabold">
+    <div id="skills" className="w-full  p-2 sm:mx-5 pt-24 font-extrabold">
       <div className="max-w-[1240px]  mx-auto ">
         <p className="text-xl tracking-widest uppercase text-[#121114]">
           {" < SKILLS />"}

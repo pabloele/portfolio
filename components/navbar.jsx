@@ -7,6 +7,13 @@ import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { useState } from "react";
 import { useRouter } from "next/router";
+// import { Bruno_Ace } from "next/font/google";
+
+// const bruno_ace = Bruno_Ace({
+//   subsets: [],
+//   weight: "400",
+// });
+
 export default function Navbar() {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
@@ -58,6 +65,7 @@ export default function Navbar() {
   };
 
   return (
+    // <div className={bruno_ace.className}>
     <div
       style={{ backgroundColor: `${navBg}` }}
       className={
@@ -223,5 +231,6 @@ export default function Navbar() {
         </div>
       </div>
     </div>
+    // </div>
   );
 }
