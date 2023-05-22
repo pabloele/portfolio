@@ -203,7 +203,7 @@ export default function Navbar() {
           </h1>
         </div>
 
-        <div className="flex-grow font-custom font-extrabold">
+        <div className="flex-grow font-extrabold">
           <ul
             style={{ color: `${linkColor}` }}
             className="ld:flex justify-end px-7  md:flex hidden ">
