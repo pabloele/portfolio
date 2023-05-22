@@ -15,12 +15,3 @@ export default function App({ Component, pageProps }) {
     </div>
   );
 }
-// export default function App({ Component, pageProps }) {
-//   return (
-//     <div>
-//       <GoogleFonts href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" />
-//       <Navbar />
-//       <Component {...pageProps} />
-//     </div>
-//   );
-// }

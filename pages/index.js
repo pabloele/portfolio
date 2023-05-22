@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Pablo | Fullstack developer</title>
+        <title>Pablo Levy | Fullstack developer</title>
         <meta name="" content=""></meta>
         <link rel="icon" href="/favicon.ico"></link>
       </Head>
