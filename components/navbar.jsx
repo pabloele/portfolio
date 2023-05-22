@@ -54,7 +54,7 @@ export default function Navbar() {
   };
 
   const handleDownload = () => {
-    const fileUrl = "cv";
+    const fileUrl = "Pablo_Levy_Fullstack.pdf";
 
     const link = document.createElement("a");
     link.href = fileUrl;
