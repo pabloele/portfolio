@@ -28,11 +28,7 @@ export default function mecanu() {
             {`Portfolio full responsive realizado en Next Js version 13, utilizando Tailwind`}
           </p>
           <button className="px-8 py-2 mt-4 mr-8">
-            <Link
-              href="https://portfolio-nu-two-71.vercel.app/"
-              target="_blank">
-              Deploy
-            </Link>
+            <Link href="/#main">Deploy</Link>
           </button>
           <button className="px-8 py-2 mt-4">
             <Link href="https://github.com/pabloele/portfolio" target="_blank">
