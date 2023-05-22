@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import Navbar from "../components/navbar";
-import { Bruno_Ace } from "@next/font/google";
+import { Bruno_Ace } from "next/font/google";
 
 const custom = Bruno_Ace({
   subsets: [],
