@@ -8,29 +8,62 @@ import Image from "next/image";
 import contactImg from "../public/assets/contactus.jpg";
 import { useState } from "react";
 import emailjs from "emailjs-com";
+import { useRouter } from "next/router";
 
 export default function Contact() {
+  const router = useRouter();
   const form = useRef();
 
   const sendEmail = (e, mail_service, mail_template, mail_key) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_DB_MAIL_SERVICE,
-        process.env.NEXT_PUBLIC_MAIL_TEMPLATE,
-        form.current,
-        process.env.NEXT_PUBLIC_DB_MAIL_KEY
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
+    const validate = () => {
+      if (errors.message === "empty")
+        setErrors({ ...errors, message: "invalid" });
+      if (errors.subject === "empty")
+        setErrors({ ...errors, subject: "invalid" });
+    };
+
+    const hasErrors = Object.values(errors).some(
+      (error) => error === "invalid" || error === "empty"
+    );
+    if (!hasErrors) {
+      emailjs
+        .sendForm(
+          process.env.NEXT_PUBLIC_DB_MAIL_SERVICE,
+          process.env.NEXT_PUBLIC_MAIL_TEMPLATE,
+          form.current,
+          process.env.NEXT_PUBLIC_DB_MAIL_KEY
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            setFormData({
+              user_name: "",
+              phone: "",
+              user_email: "",
+              subject: "",
+              message: "",
+            });
+            router.push("/#main");
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    } else {
+      alert(
+        "El formulario contiene errores o no se han completado todos los campos obligatorios"
       );
+    }
   };
+  const [errors, setErrors] = useState({
+    user_name: "empty",
+    phone: "",
+    user_email: "empty",
+    subject: "empty",
+    message: "empty",
+  });
   const [formData, setFormData] = useState({
     user_name: "",
     phone: "",
@@ -38,7 +71,53 @@ export default function Contact() {
     subject: "",
     message: "",
   });
+
   const handleInputChange = (e) => {
+    const { name, value } = e.target;
+
+    const validate = () => {
+      switch (name) {
+        case "user_name":
+          if (value === "") {
+            setErrors({ ...errors, user_name: "invalid" });
+          } else {
+            setErrors({ ...errors, user_name: "" });
+          }
+          break;
+        case "user_email":
+          const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+          if (value === "" || !emailRegex.test(value)) {
+            setErrors((prevErrors) => ({
+              ...prevErrors,
+              user_email: "invalid",
+            }));
+          } else {
+            setErrors((prevErrors) => ({ ...prevErrors, user_email: "" }));
+          }
+          break;
+
+        case "subject":
+          if (value === "") {
+            setErrors({ ...errors, subject: "invalid" });
+          } else {
+            setErrors({ ...errors, subject: "" });
+          }
+          break;
+        case "message":
+          if (value === "") {
+            setErrors({ ...errors, message: "invalid" });
+          } else {
+            setErrors({ ...errors, message: "" });
+          }
+          break;
+
+        default:
+          break;
+      }
+    };
+
+    validate();
+
     setFormData((prevFormData) => ({
       ...prevFormData,
       [e.target.name]: e.target.value,
@@ -73,7 +152,7 @@ export default function Contact() {
           className="flex flex-col ml-4
         ">
           <p className="text-xl uppercase text-[#121114] ">{"<Contacto />"}</p>
-          <h2 className="py-4 ">Hablemos</h2>
+          <h2 className="py-4 ">{"Hablemos!"}</h2>
         </div>
         <div className="grid lg:grid-cols-5 gap 8">
           {/* left */}
@@ -92,7 +171,7 @@ export default function Contact() {
                 <p>Full Stack Developer</p>
                 <p className="py-4"> </p>
                 <div>
-                  <p className="uppercase pt-8 ">Open to Work</p>
+                  <p className="uppercase pt-8 ">{"Open to Work =)"}</p>
                 </div>
                 <div className="flex items-left justify-between py-4">
                   <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
@@ -132,7 +211,11 @@ export default function Contact() {
                 <div className="flex flex-col">
                   <label className="uppercase text-sm py-2">Nombre</label>
                   <input
-                    className="border-2 rounded-lg p-3 flex border-gray-300"
+                    className={
+                      errors.user_name === "invalid"
+                        ? "border-2 rounded-lg p-3 flex border-red-300"
+                        : "border-2 rounded-lg p-3 flex border-gray-300"
+                    }
                     type="text"
                     name="user_name"
                     value={formData.user_name}
@@ -141,7 +224,7 @@ export default function Contact() {
                 </div>
                 <div className="flex flex-col">
                   <label className="uppercase text-sm py-2">
-                    Número de teléfono
+                    Teléfono (opcional)
                   </label>
                   <input
                     className="border-2 rounded-lg p-3 flex border-gray-300"
@@ -154,7 +237,11 @@ export default function Contact() {
                 <div className="flex flex-col">
                   <label className="uppercase text-sm py-2">Email</label>
                   <input
-                    className="border-2 rounded-lg p-3 flex border-gray-300"
+                    className={
+                      errors.user_email === "invalid"
+                        ? "border-2 rounded-lg p-3 flex border-red-300"
+                        : "border-2 rounded-lg p-3 flex border-gray-300"
+                    }
                     type="text"
                     name="user_email"
                     value={formData.user_email}
@@ -164,7 +251,11 @@ export default function Contact() {
                 <div className="flex flex-col">
                   <label className="uppercase text-sm py-2">Subject</label>
                   <input
-                    className="border-2 rounded-lg p-3 flex border-gray-300"
+                    className={
+                      errors.user_subject === "invalid"
+                        ? "border-2 rounded-lg p-3 flex border-red-300"
+                        : "border-2 rounded-lg p-3 flex border-gray-300"
+                    }
                     type="text"
                     name="subject"
                     value={formData.subject}
@@ -174,7 +265,12 @@ export default function Contact() {
                 <div className="flex flex-col">
                   <label className="uppercase text-sm py-2">Mensaje</label>
                   <textarea
-                    className="border-2 rounded-lg p-3 border-gray-300"
+                    className={
+                      errors.user_email === "invalid"
+                        ? "border-2 rounded-lg p-3 border-red-300"
+                        : "border-2 rounded-lg p-3 border-gray-300"
+                    }
+                    // className="border-2 rounded-lg p-3 border-gray-300"
                     rows="10"
                     name="message"
                     value={formData.message}
