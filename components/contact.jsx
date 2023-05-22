@@ -67,13 +67,15 @@ export default function Contact() {
     document.body.removeChild(link);
   };
   return (
-    <div id="contact" className="w-full light-screen pt-10">
+    <div
+      id="contact"
+      className="w-full light-screen pt-10 font-custom font-extrabold">
       <div className="max-w-[1240px] m-auto px-2 py-16  ">
         <div
           className="flex flex-col ml-4
         ">
-          <p className="text-xl uppercase text-[#5651e5] ">Contacto</p>
-          <h2 className="py-4 ">Let´s talk</h2>
+          <p className="text-xl uppercase text-[#121114] ">{"<Contacto />"}</p>
+          <h2 className="py-4 ">Hablemos</h2>
         </div>
         <div className="grid lg:grid-cols-5 gap 8">
           {/* left */}
@@ -90,13 +92,9 @@ export default function Contact() {
               <div>
                 <h2 className="py-2 ">Pablo Levy</h2>
                 <p>Full Stack Developer</p>
-                <p className="py-4">
-                  {
-                    " Disponible para posiciones full time o freelance. Contactame y hablemos :)."
-                  }
-                </p>
+                <p className="py-4"> </p>
                 <div>
-                  <p className="uppercase pt-8 ">Contacto!</p>
+                  <p className="uppercase pt-8 ">Open to Work</p>
                 </div>
                 <div className="flex items-left justify-between py-4">
                   <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">

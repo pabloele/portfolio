@@ -122,6 +122,7 @@ export default function Navbar() {
                 </li>
                 <li className="py-4 text-sm uppercase hover:border-b">
                   <Link
+                    className={style.titles}
                     href="/#skills"
                     onClick={() => {
                       setNav(false);
@@ -194,7 +195,7 @@ export default function Navbar() {
           </h1>
         </div>
 
-        <div className="flex-grow">
+        <div className="flex-grow font-custom font-extrabold">
           <ul
             style={{ color: `${linkColor}` }}
             className="ld:flex justify-end px-7  md:flex hidden ">

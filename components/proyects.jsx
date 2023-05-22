@@ -5,11 +5,13 @@ import pokemonImg from "../public/assets/proyects/pokemon.png";
 import Link from "next/link";
 export default function Proyects() {
   return (
-    <div id="proyects" className="w-full justify-center pt-40 pb-60 mx-auto ">
+    <div
+      id="proyects"
+      className="w-full justify-center pt-40 pb-60 mx-auto font-custom font-extrabold">
       <div className="max-w-[1240px]  py-10 justify-center mx-auto">
         <div className="w-full pl-4  ">
-          <p className="text-xl tracking-widest uppercase text-[#5651e5] text-left pb-4">
-            Proyectos
+          <p className="text-xl tracking-widest uppercase text-[#121114] text-left pb-4">
+            {"<Proyectos />"}
           </p>
           <h2 className="text-left">Destacados</h2>
         </div>

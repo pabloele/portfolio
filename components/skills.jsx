@@ -1,14 +1,16 @@
 import React from "react";
 import Image from "next/image";
-
+import style from "./skills.module.css";
 export default function Skills() {
   return (
-    <div id="skills" className="w-full  p-2 sm:mx-5 pt-24 ">
+    <div
+      id="skills"
+      className="w-full  p-2 sm:mx-5 pt-24 font-custom font-extrabold">
       <div className="max-w-[1240px]  mx-auto ">
-        <p className="text-xl -tracking-widest uppercase text-[#5651e5]">
+        <p className="text-xl tracking-widest uppercase text-[#121114]">
           {" < SKILLS />"}
         </p>
-        <h2>What i can do</h2>
+        <h2>Qué puedo hacer</h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="p-6 shadow-xl hover:scale-105 ease-in duration-300">
