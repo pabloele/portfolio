@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import pokemonImg from "../public/assets/proyects/pokemon.png";
 import { RiRadioButtonFill } from "react-icons/ri";
 export default function pokemon() {
@@ -41,9 +42,9 @@ export default function pokemon() {
             Demo
           </button>
           <button className="px-8 py-2 mt-4">
-            <a href="https://github.com/pabloele/PokemonPI" target="_blank">
+            <Link href="https://github.com/pabloele/PokemonPI" target="_blank">
               Code
-            </a>
+            </Link>
           </button>
         </div>
         <div className="col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl p-4">
@@ -74,9 +75,9 @@ export default function pokemon() {
             </div>
           </div>
         </div>
-        <a href="/#proyects">
+        <Link href="/#proyects">
           <p className="underline cursor-pointer">Volver</p>
-        </a>
+        </Link>
       </div>
     </div>
   );
