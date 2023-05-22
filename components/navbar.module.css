@@ -3,3 +3,7 @@
 .titles {
   font-family: "Bruno Ace", cursive;
 }
+
+.link {
+  scroll-behavior: smooth;
+}

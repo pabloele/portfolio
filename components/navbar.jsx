@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
-import { Link } from "react-scroll";
+// import { Link } from "react-scroll";
+import Link from "next/link";
 import style from "./navbar.module.css";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
@@ -77,13 +78,13 @@ export default function Navbar() {
                   }}>
                   {" < /> "}
                 </Link> */}
-                <a
+                <Link
                   href="/#main"
                   onClick={() => {
                     setNav(false);
                   }}>
                   {" < /> "}
-                </a>
+                </Link>
               </h1>
 
               <div
@@ -113,13 +114,13 @@ export default function Navbar() {
                     }}>
                     Home
                   </Link> */}
-                  <a
+                  <Link
                     href="/#main"
                     onClick={() => {
                       setNav(false);
                     }}>
                     {"Home"}
-                  </a>
+                  </Link>
                 </li>
                 <li className="py-4 text-sm uppercase hover:border-b">
                   {/* <Link
@@ -133,13 +134,13 @@ export default function Navbar() {
                     }}>
                     About
                   </Link> */}
-                  <a
+                  <Link
                     href="/#about"
                     onClick={() => {
                       setNav(false);
                     }}>
                     {"About"}
-                  </a>
+                  </Link>
                 </li>
                 <li className="py-4 text-sm uppercase hover:border-b">
                   {/* <Link
@@ -153,13 +154,13 @@ export default function Navbar() {
                     }}>
                     Skills
                   </Link> */}
-                  <a
+                  <Link
                     href="/#skills"
                     onClick={() => {
                       setNav(false);
                     }}>
                     {"Skills"}
-                  </a>
+                  </Link>
                 </li>
                 <li className="py-4 text-sm uppercase hover:border-b">
                   {/* <Link
@@ -173,13 +174,13 @@ export default function Navbar() {
                     }}>
                     Proyectos
                   </Link> */}
-                  <a
+                  <Link
                     href="/#proyects"
                     onClick={() => {
                       setNav(false);
                     }}>
                     {"Proyectos"}
-                  </a>
+                  </Link>
                 </li>
                 <li className="py-4 text-sm uppercase hover:border-b">
                   {/* <Link
@@ -193,13 +194,13 @@ export default function Navbar() {
                     }}>
                     Contacto
                   </Link> */}
-                  <a
+                  <Link
                     href="/#contact"
                     onClick={() => {
                       setNav(false);
                     }}>
                     {"Contacto"}
-                  </a>
+                  </Link>
                 </li>
                 {/* <Link href="/">
                   <li className="py-4 text-sm">Home</li>
@@ -231,12 +232,12 @@ export default function Navbar() {
                     </a>
                   </div>
                   <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
-                    <a
+                    <Link
                       href="https://github.com/pabloele"
                       target="_blank"
                       rel="noopener noreferrer">
                       <FaGithub />
-                    </a>
+                    </Link>
                   </div>
                   <div
                     className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200"
@@ -260,7 +261,7 @@ export default function Navbar() {
             style={{ color: `${linkColor}` }}>
             {/* <Link to="main" spy={true} smooth={true} offset={0} duration={100}>
             </Link> */}
-            <a href="/#main">{" <Pablo Levy /> "}</a>
+            <Link href="/#main">{" <Pablo Levy /> "}</Link>
           </h1>
         </div>
 
@@ -276,7 +277,7 @@ export default function Navbar() {
                 offset={0}
                 duration={100}>
               </Link> */}
-              <a href="/#main">Home</a>
+              <Link href="/#main">Home</Link>
             </li>
             <li className="ml-10 text-sm uppercase hover:border-b scroll-smooth ">
               {/* <Link
@@ -286,7 +287,7 @@ export default function Navbar() {
                 offset={0}
                 duration={100}>
               </Link> */}
-              <a href="/#about">About</a>
+              <Link href="/#about">About</Link>
             </li>
             <li className="ml-10 text-sm uppercase hover:border-b">
               {/* <Link
@@ -297,7 +298,7 @@ export default function Navbar() {
                 duration={100}>
                 Contacto
               </Link> */}
-              <a href="/#skills">Skills</a>
+              <Link href="/#skills">Skills</Link>
             </li>
             <li className="ml-10 text-sm uppercase hover:border-b">
               {/* <Link
@@ -307,7 +308,7 @@ export default function Navbar() {
                 offset={0}
                 duration={100}>
               </Link> */}
-              <a href="/#proyects">Proyectos</a>
+              <Link href="/#proyects">Proyectos</Link>
             </li>
             <li className="ml-10 text-sm uppercase hover:border-b">
               {/* <Link
@@ -318,7 +319,9 @@ export default function Navbar() {
                 duration={100}>
                 Contacto
               </Link> */}
-              <a href="/#contact">Contacto</a>
+              <Link href="/#contact" className={style.link}>
+                Contacto
+              </Link>
             </li>
           </ul>
         </div>

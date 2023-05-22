@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import mecanuImg from "../public/assets/proyects/mecanu.png";
 import { RiRadioButtonFill } from "react-icons/ri";
+import Link from "next/link";
 export default function mecanu() {
   return (
     <div className="w-full">
@@ -84,9 +85,13 @@ export default function mecanu() {
             </div>
           </div>
         </div>
-        <a href="/#proyects">
+        {/* <Link to="main" spy={true} smooth={true} offset={0} duration={100}>
           <p className="underline cursor-pointer">Volver</p>
-        </a>
+        </Link>
+      */}
+        <Link href="/#proyects" className="scroll-ms-0.5">
+          <p className="underline cursor-pointer">Volver</p>
+        </Link>
       </div>
     </div>
   );
