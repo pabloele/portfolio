@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Head>
         <title>Pablo Levy | Fullstack developer</title>
         <meta name="" content=""></meta>
@@ -24,6 +24,6 @@ export default function Home() {
       <Skills />
       <Proyects />
       <Contact />
-    </>
+    </div>
   );
 }
