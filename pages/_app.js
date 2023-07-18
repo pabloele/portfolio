@@ -9,7 +9,7 @@ const bruno_ace = Bruno_Ace({
 
 export default function App({ Component, pageProps }) {
   return (
-    <div className={bruno_ace.className}>
+    <div>
       <Navbar />
       <Component {...pageProps} />
     </div>

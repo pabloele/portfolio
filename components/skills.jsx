@@ -12,13 +12,14 @@ const font2 = Roboto_Mono({
 });
 export default function Skills() {
   return (
-    <div className={bruno_ace.className}>
-      <div id="skills" className="w-full  p-2 sm:mx-5 pt-24 font-extrabold">
+    <div className={"py-48" && bruno_ace.className}>
+      <div
+        id="skills"
+        className="w-full  p-2 sm:mx-5 md:mx-0 pt-24 font-semibold"
+      >
         <div className="max-w-[1240px]  mx-auto ">
-          <p className="text-xl tracking-widest uppercase text-[#121114]">
-            {" < SKILLS />"}
-          </p>
-          <h2>Qué puedo hacer</h2>
+          <h2 className=" tracking-widest text-[#121114]">{" < Skills />"}</h2>
+          {/* <h2>Qué puedo hacer</h2> */}
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="p-6 shadow-xl hover:scale-105 ease-in duration-300">

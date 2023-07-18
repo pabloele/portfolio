@@ -9,6 +9,16 @@ import contactImg from "../public/assets/contactus.jpg";
 import { useState } from "react";
 import emailjs from "emailjs-com";
 import { useRouter } from "next/router";
+import { Bruno_Ace, Roboto_Mono } from "next/font/google";
+const Bruno_ace = Bruno_Ace({
+  subsets: [],
+  weight: "400",
+});
+
+const font2 = Roboto_Mono({
+  subsets: [],
+  weight: "400",
+});
 
 export default function Contact() {
   const router = useRouter();
@@ -146,13 +156,22 @@ export default function Contact() {
     document.body.removeChild(link);
   };
   return (
-    <div id="contact" className="w-full light-screen pt-10  font-extrabold">
+    <div
+      id="contact"
+      className={
+        "w-full light-screen pt-10  font-extrabold" && Bruno_ace.className
+      }
+    >
       <div className="max-w-[1240px] m-auto px-2 py-16  ">
         <div
           className="flex flex-col ml-4
-        ">
-          <p className="text-xl uppercase text-[#121114] ">{"<Contacto />"}</p>
-          <h2 className="py-4 ">{"Hablemos!"}</h2>
+        "
+        >
+          <br />
+          <h2 className="text-xl uppercase text-[#121114] ">
+            {"<Contacto />"}
+          </h2>
+          {/* <h2 className="py-4 ">{""}</h2> */}
         </div>
         <div className="grid lg:grid-cols-5 gap 8">
           {/* left */}
@@ -178,7 +197,8 @@ export default function Contact() {
                     <Link
                       href="https://www.linkedin.com/in/pabloelevy/"
                       target="_blank"
-                      rel="noopener noreferrer">
+                      rel="noopener noreferrer"
+                    >
                       <FaLinkedinIn />
                     </Link>
                   </div>
@@ -186,18 +206,21 @@ export default function Contact() {
                     <Link
                       href="https://github.com/pabloele"
                       target="_blank"
-                      rel="noopener noreferrer">
+                      rel="noopener noreferrer"
+                    >
                       <FaGithub />
                     </Link>
                   </div>
                   <div
                     onClick={handleDefaultMail}
-                    className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
+                    className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200"
+                  >
                     <AiOutlineMail />
                   </div>
                   <div
                     onClick={handleDownload}
-                    className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
+                    className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200"
+                  >
                     <BsFillPersonLinesFill />
                   </div>
                 </div>
@@ -207,7 +230,7 @@ export default function Contact() {
           {/* right */}
           <div className="col-span-2 lg:col-span-3 w-full h-auto lg:h-full shadow-xl shadow-gray-400 rounded-xl p-4 overflow-y-auto">
             <div className="flex flex-col gap-4">
-              <form ref={form} onSubmit={sendEmail}>
+              <form ref={form} onSubmit={sendEmail} className={font2.className}>
                 <div className="flex flex-col">
                   <label className="uppercase text-sm py-2">Nombre</label>
                   <input
@@ -279,7 +302,8 @@ export default function Contact() {
                 </div>
                 <button
                   // type="submit"
-                  className="w-full p-4 text-gray-100 mt-4">
+                  className="w-full p-4 text-gray-100 mt-4"
+                >
                   Enviar Mensaje
                 </button>
               </form>

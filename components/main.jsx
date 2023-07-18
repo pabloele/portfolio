@@ -41,7 +41,7 @@ export default function Main() {
         <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
           <div>
             <p className="uppercase text-sm tracking-widest text-gray-600 font">
-              FULL STACK DEVELOPER
+              Portfolio
             </p>
             <h1
               className="py-4 text-gray-700 "
@@ -58,7 +58,8 @@ export default function Main() {
                 <Link
                   href="https://www.linkedin.com/in/pabloelevy/"
                   target="_blank"
-                  rel="noopener noreferrer">
+                  rel="noopener noreferrer"
+                >
                   <FaLinkedinIn />
                 </Link>
               </div>
@@ -66,18 +67,21 @@ export default function Main() {
                 <Link
                   href="https://github.com/pabloele"
                   target="_blank"
-                  rel="noopener noreferrer">
+                  rel="noopener noreferrer"
+                >
                   <FaGithub />
                 </Link>
               </div>
               <div
                 className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300"
-                onClick={handleDefaultMail}>
+                onClick={handleDefaultMail}
+              >
                 <AiOutlineMail />
               </div>
               <div
                 className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300"
-                onClick={handleDownload}>
+                onClick={handleDownload}
+              >
                 <BsFillPersonLinesFill />
               </div>
               {/* CV Pablo Levy - fullstack .pdf */}
