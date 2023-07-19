@@ -12,7 +12,7 @@ const font2 = Roboto_Mono({
 });
 export default function Skills() {
   return (
-    <div className={"py-80 min-h-screen" && bruno_ace.className}>
+    <div className={"my-10 py-80 min-h-screen" && bruno_ace.className}>
       <div
         id="skills"
         className="w-full  p-2 sm:mx-5 md:mx-0 pt-24 font-semibold"
