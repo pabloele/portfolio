@@ -159,7 +159,8 @@ export default function Contact() {
     <div
       id="contact"
       className={
-        "w-full light-screen pt-10  font-extrabold" && Bruno_ace.className
+        "w-full light-screen pt-10  font-extrabold min-h-screen" &&
+        Bruno_ace.className
       }
     >
       <div className="max-w-[1240px] m-auto px-2 py-16  ">

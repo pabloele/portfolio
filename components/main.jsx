@@ -57,7 +57,7 @@ export default function Main() {
   //   };
   // }, [router]);
   return (
-    <div className={bruno_ace.className}>
+    <div className={"min-h-screen" && bruno_ace.className}>
       <div id="main" className="w-full h-screen text-center font-extrabold">
         <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
           <div>

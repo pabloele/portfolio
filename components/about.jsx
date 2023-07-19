@@ -13,7 +13,7 @@ const montserrat = Roboto_Mono({
 });
 export default function About() {
   return (
-    <div className={bruno_ace.className}>
+    <div className={"min-h-screen" && bruno_ace.className}>
       <div
         id="about"
         className="w-full  md:hscreen p-2 flex flex-col md:flex-row items-center py-16 pb-80 pt-40 font-semibold"

@@ -21,7 +21,7 @@ export default function Proyects() {
     <div
       id="proyects"
       className={
-        "w-full justify-center pt-40 pb-60 mx-auto font-extrabold" &&
+        "w-full justify-center pt-40 pb-60 mx-auto font-extrabold min-h-screen" &&
         Bruno_ace.className
       }
     >
