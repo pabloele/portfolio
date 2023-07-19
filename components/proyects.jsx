@@ -46,14 +46,14 @@ export default function Proyects() {
             />
             <div className="hidden group-hover:block absolute  left-[50%] translate-x-[-50%]">
               <h3 className="text-2xl text-white tracking-wider text-center">
-                Sistema de gestion de bodegas OPENVINO
+                Sistema de gestión de bodegas OPENVINO
               </h3>
               <p className="pb-4 pt-2 text-white text-center">
                 Next.JS - Express - Postgresql - Metamask - Tailwind - React -
                 Node.js - Javascript
               </p>
               <p className="text-center py-3 rounded-lg bg-white text-gray-700 font-bold text-lg cursor-pointer">
-                <Link href="/pokemon">Ver más</Link>
+                <Link href="/openvino">Ver más</Link>
               </p>
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function Proyects() {
                 React - Tailwind - Firebase - Firestore
               </p>
               <p className="text-center py-3 rounded-lg bg-white text-gray-700 font-bold text-lg cursor-pointer">
-                <Link href="/pokemon">Ver más</Link>
+                <Link href="/netflix">Ver más</Link>
               </p>
             </div>
           </div>

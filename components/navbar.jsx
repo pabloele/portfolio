@@ -211,7 +211,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16 ">
           <div className={style.titles}>
             <h1
-              className="font-vt323 py-10 font-bold text-2xl sm:text-xl md:text-3xl cursor-pointer"
+              className="font-vt323 py-10 font-bold text-xl md:text-2xl  cursor-pointer"
               style={{ color: `${linkColor}` }}
             >
               <Link href="/#main">{" <Pablo Levy /> "}</Link>

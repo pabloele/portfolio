@@ -2,12 +2,14 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import netflixImg from "../public/assets/proyects/netflix.jpg";
-import { RiRadioButtonFill } from "react-icons/ri";
+import { RiRadioButtonFill , RiSkipBackFill} from "react-icons/ri";
+import {FaAngleLeft} from "react-icons/fa"
 export default function pokemon() {
   return (
     <div className="w-full">
       <div className="w-screen h-[30vh] lg:h-[40vh] relative">
-        <div className="absolute top-0 left-0 w-full h-[30vh] lg:h-[40vh] bg-black/80 z-10" />
+        
+        <div className="absolute top-0 left-0 w-full h-[30vh] lg:h-[40vh] bg-black/60 z-10" />
         <Image
           className="absolute z-1"
           layout="fill"
@@ -20,30 +22,32 @@ export default function pokemon() {
           <h3>React | Css puro | Postgresql | Express</h3>
         </div>
       </div>
+      <Link href="/#proyects">
+          
+          <div className="fixed m-4 rounded-full shadow-lg shadow-gray-400 cursor-pointer hover:scale-105 ease-in duration-200" >
+                    <FaAngleLeft size={30} className="text-[#5651e5]"/>
+          </div>
+        </Link>
       <div className="max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 pt-8 ">
         <div className="col-span-4">
-          <p>Mecanu Web-app</p>
+          <br></br>
           <h2>Overview</h2>
           <p>
-            Aplicación desarrollada como proyecto individual durante el bootcamp
-            de Henry. La app permite a los usuarios ver tarjetas de Pokémon
-            obtenidas de una API externa. Implementé funcionalidades de
-            paginación, ordenamiento y filtros combinados. Además, los usuarios
-            pueden agregar y eliminar Pokémon de la base de datos. En el
-            frontend, utilicé React y CSS para crear una interfaz atractiva y
-            fácil de usar. En el backend, empleé Node.js y Express para manejar
-            las solicitudes y el flujo de datos. Para la persistencia, usé
-            PostgreSQL y Sequelize como base de datos y ORM.
+            Trabajo de frontend imitando el conocido servicio de streaming que permite visualizar peliculas de la API de IMDB, y permite crear perfiles de usuario y guardar sus películas favoritas. Para la autenticación se utilizó FIREBASE y para la base de datos, FIRESTORE.
           </p>
-          <button className="px-8 py-2 mt-4 mr-8 opacity-40">
-            {/* <a
-              href=""
-              target="_blank">
-            </a> */}
-            Demo
+         
+          <button className="px-8 py-2 mt-4 mr-8">
+            <Link href="https://netflix-clone-eight-gray-77.vercel.app/" target="_blank">
+              Deploy
+            </Link>
+          </button>
+          <button className="px-8 py-2 mt-4 mr-8">
+            <Link href="https://www.youtube.com/watch?v=4GW-LZV3T2I" target="_blank">
+              Video
+            </Link>
           </button>
           <button className="px-8 py-2 mt-4">
-            <Link href="https://github.com/pabloele/PokemonPI" target="_blank">
+            <Link href="https://github.com/pabloele/netflix" target="_blank">
               Code
             </Link>
           </button>
@@ -59,26 +63,21 @@ export default function pokemon() {
               </p>
               <p className="text-gray-600 py-2 flex items-center">
                 <RiRadioButtonFill className="pr-1" />
-                CSS
+                Tailwind CSS
               </p>
               <p className="text-gray-600 py-2 flex items-center">
                 <RiRadioButtonFill className="pr-1" />
-                Express
+                Firebase
               </p>
               <p className="text-gray-600 py-2 flex items-center">
                 <RiRadioButtonFill className="pr-1" />
-                Postgresql
+                Firestore
               </p>
-              <p className="text-gray-600 py-2 flex items-center">
-                <RiRadioButtonFill className="pr-1" />
-                Sequelize
-              </p>
+             
             </div>
           </div>
         </div>
-        <Link href="/#proyects">
-          <p className="underline cursor-pointer">Volver</p>
-        </Link>
+       
       </div>
     </div>
   );
