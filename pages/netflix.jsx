@@ -42,8 +42,8 @@ export default function pokemon() {
           <h2>Overview</h2>
           <p>
             Trabajo de frontend imitando el conocido servicio de streaming que
-            permite visualizar peliculas de la API de IMDB, y permite crear
-            perfiles de usuario y guardar sus películas favoritas. Para la
+            permite visualizar cards de peliculas de la API de IMDB, permitiendo
+            crear perfiles de usuario y guardar sus películas favoritas. Para la
             autenticación se utilizó FIREBASE y para la base de datos,
             FIRESTORE.
           </p>
