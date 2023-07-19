@@ -16,11 +16,10 @@ export default function Home() {
         <meta name="" content=""></meta>
         <link rel="icon" href="/favicon.ico"></link>
       </Head>
-
       <Main />
       <About />
-      <Skills />
       <Proyects />
+      <Skills />
       <Contact />
     </div>
   );

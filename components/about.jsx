@@ -20,7 +20,7 @@ export default function About() {
       >
         <div className="max-w-[1240px] m-auto md:flex md:gap-8">
           <div className="md:w-1/3 mt-4 md:mt-0 md:pl-8 flex justify-center ">
-            <div className="w-[200px] h-[200px] shadow-xl shadow-gray-400 rounded-full overflow-hidden hover:scale-110 ease-in duration-300">
+            <div className="w-[300px] h-[300px] shadow-xl shadow-gray-400 rounded-full overflow-hidden hover:scale-110 ease-in duration-300">
               <img
                 src="/assets/fondoln2.jpg"
                 alt="profile picture"
@@ -30,6 +30,10 @@ export default function About() {
             </div>
           </div>
           <div className="md:w-2/3 text-center md:text-justify px-5">
+            <br />
+            <br />
+            <br />
+
             <h2>{" <About/>"}</h2>
             {/* <h2>Quién soy</h2> */}
             {/* <p className="py-5 text-lg">
