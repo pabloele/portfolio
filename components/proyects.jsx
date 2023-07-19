@@ -45,11 +45,11 @@ export default function Proyects() {
               alt="mcnu"
             />
             <div className="hidden group-hover:block absolute  left-[50%] translate-x-[-50%]">
-              <h3 className="text-2xl text-white tracking-wider text-center">
-                OPENVINO DASHBOARD
-              </h3>
+              <h2 className="text-2xl text-white tracking-wider text-center">
+                Openvino Dashboard
+              </h2>
               <p className="pb-4 pt-2 text-white text-center">
-                Next.JS - Express - Postgresql - Metamask - Tailwind - React
+                Next.JS - Express - Postgresql - Metamask - Tailwind
               </p>
               <p className="text-center py-3 rounded-lg bg-white text-gray-700 font-bold text-lg cursor-pointer">
                 <Link href="/openvino">Ver más</Link>
