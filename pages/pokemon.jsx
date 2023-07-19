@@ -42,12 +42,12 @@ export default function pokemon() {
             las solicitudes y el flujo de datos. Para la persistencia, usé
             PostgreSQL y Sequelize como base de datos y ORM.
           </p>
-          <button className="px-8 py-2 mt-4 mr-8 opacity-40">
-            {/* <a
-              href=""
+          <button className="px-8 py-2 mt-4 mr-8">
+            <Link
+              href="https://www.youtube.com/watch?v=XoZ52AH3xMs"
               target="_blank">
-            </a> */}
-            Demo
+            Video
+            </Link>
           </button>
           <button className="px-8 py-2 mt-4">
             <Link href="https://github.com/pabloele/PokemonPI" target="_blank">

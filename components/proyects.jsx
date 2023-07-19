@@ -6,13 +6,13 @@ import portfolioImg from "../public/assets/proyects/portfolio.png";
 import netflixImg from "../public/assets/proyects/netflix.jpg";
 import openvinoImg from "../public/assets/proyects/openvino.png";
 import Link from "next/link";
-import { Bruno_Ace } from "next/font/google";
+import { Bruno_Ace, Roboto_Mono } from "next/font/google";
 const Bruno_ace = Bruno_Ace({
   subsets: [],
   weight: "400",
 });
 
-// const montserrat = Roboto_Mono({
+// const Font2 = Roboto_Mono({
 //   subsets: [],
 //   weight: "400",
 // });
