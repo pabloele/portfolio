@@ -168,9 +168,7 @@ export default function Contact() {
         "
         >
           <br />
-          <h2 className="text-xl uppercase text-[#121114] ">
-            {"<Contacto />"}
-          </h2>
+          <h2 className="text-[#121114] ">{"<Contacto />"}</h2>
           {/* <h2 className="py-4 ">{""}</h2> */}
         </div>
         <div className="grid lg:grid-cols-5 gap 8">

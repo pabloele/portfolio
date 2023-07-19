@@ -3,10 +3,20 @@ import Image from "next/image";
 import Link from "next/link";
 import pokemonImg from "../public/assets/proyects/pokemon.png";
 import { RiRadioButtonFill } from "react-icons/ri";
-import {FaAngleLeft} from "react-icons/fa"
+import { FaAngleLeft } from "react-icons/fa";
+import { Bruno_Ace, Roboto_Mono } from "next/font/google";
+const bruno_ace = Bruno_Ace({
+  subsets: [],
+  weight: "400",
+});
+
+const font2 = Roboto_Mono({
+  subsets: [],
+  weight: "400",
+});
 export default function pokemon() {
   return (
-    <div className="w-full">
+    <div className={"w-full" && font2.className}>
       <div className="w-screen h-[30vh] lg:h-[40vh] relative">
         <div className="absolute top-0 left-0 w-full h-[30vh] lg:h-[40vh] bg-black/80 z-10" />
         <Image
@@ -22,27 +32,36 @@ export default function pokemon() {
         </div>
       </div>
       <Link href="/#proyects">
-          
-          <div className="fixed m-4 rounded-full shadow-lg shadow-gray-400 cursor-pointer hover:scale-105 ease-in duration-200" >
-                    <FaAngleLeft size={30} className="text-[#5651e5]"/>
-          </div>
-        </Link>
+        <div className="fixed m-4 rounded-full shadow-lg shadow-gray-400 cursor-pointer hover:scale-105 ease-in duration-200">
+          <FaAngleLeft size={30} className="text-[#5651e5]" />
+        </div>
+      </Link>
       <div className="max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 pt-8 ">
         <div className="col-span-4">
-         <br />
+          <br />
           <h2>Overview</h2>
           <p>
-          La aplicación consiste en un dashboard para las bodegas, que permite administrar los redeems (canjes) de tokens, y una vista de administrador para  gestionar la información de todas las bodegas desde un perfil de superusuario. Cuenta además con autenticación con Metamask, desarrollo de un microservicio en express que para manejar las notificciones provinientes de otro servicio de Openvino, conectado al dashboard mediante web socket.  
+            La aplicación consiste en un dashboard para las bodegas, que permite
+            administrar los redeems (canjes) de tokens, y una vista de
+            administrador para gestionar la información de todas las bodegas
+            desde un perfil de superusuario. Cuenta además con autenticación con
+            Metamask, desarrollo de un microservicio en express que para manejar
+            las notificciones provinientes de otro servicio de Openvino,
+            conectado al dashboard mediante web socket.
           </p>
           <button className="px-8 py-2 mt-4 mr-8">
             <Link
               href="https://www.youtube.com/watch?v=5vNg5u-CbW4"
-              target="_blank">
-            Video
+              target="_blank"
+            >
+              Video
             </Link>
           </button>
           <button className="px-8 py-2 mt-4">
-            <Link href="https://github.com/openvino/redeem_dashboard" target="_blank">
+            <Link
+              href="https://github.com/openvino/redeem_dashboard"
+              target="_blank"
+            >
               Code
             </Link>
           </button>
@@ -87,7 +106,6 @@ export default function pokemon() {
             </div>
           </div>
         </div>
- 
       </div>
     </div>
   );
