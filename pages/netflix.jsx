@@ -28,7 +28,7 @@ export default function pokemon() {
         />
         <div className="absolute top-[70%] max-w-[1240px] w-full left-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2 px-10">
           <h2>Netflix - Clone</h2>
-          <h3>React | Css puro | Postgresql | Express</h3>
+          <h3>React | TailwindCSS | Firebase | Firestore</h3>
         </div>
       </div>
       <Link href="/#proyects">
