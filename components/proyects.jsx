@@ -45,7 +45,7 @@ export default function Proyects() {
               alt="mcnu"
             />
             <div className="hidden group-hover:block absolute  left-[50%] translate-x-[-50%]">
-              <h3 className="text-xl text-white tracking-wider text-center">
+              <h3 className="text-xl sm:text-lg text-white tracking-wider text-center">
                 Openvino-Dashboard
               </h3>
               <p className="pb-4 pt-2 text-white text-center">
