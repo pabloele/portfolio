@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style from "./main.module.css";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import Link from "next/link";
 import { Bruno_Ace } from "next/font/google";
-
+import { useRouter } from "next/router";
 const bruno_ace = Bruno_Ace({
   subsets: [],
   weight: "400",
@@ -34,15 +34,33 @@ export default function Main() {
     link.click();
     document.body.removeChild(link);
   };
+  // const router = useRouter();
 
+  // useEffect(() => {
+  //   const handleWheel = (e) => {
+  //     if (e.deltaY > 0) {
+  //       // Scroll hacia abajo
+  //       router.push("/#about");
+  //       console.log("abajo");
+  //     } else {
+  //       // Scroll hacia arriba
+  //       // router.push("");
+  //       console.log("arriba);
+  //     }
+  //   };
+
+  //   window.addEventListener("wheel", handleWheel);
+
+  //   return () => {
+  //     // Asegúrate de limpiar el event listener al desmontar el componente
+  //     window.removeEventListener("wheel", handleWheel);
+  //   };
+  // }, [router]);
   return (
     <div className={bruno_ace.className}>
       <div id="main" className="w-full h-screen text-center font-extrabold">
         <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
           <div>
-            <p className="uppercase text-sm tracking-widest text-gray-600 font">
-              Portfolio
-            </p>
             <h1
               className="py-4 text-gray-700 "
               // className={style.titles}
@@ -52,6 +70,9 @@ export default function Main() {
             </h1>
             <p className="uppercase text-sm tracking-widest text-gray-600">
               Soy un desarrollador web full stack
+            </p>
+            <p className="uppercase text-sm tracking-widest text-gray-600 font">
+              Este es mi Portfolio.
             </p>
             <div className="flex items-center justify-between max-w-[330px] m-auto py-4">
               <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
