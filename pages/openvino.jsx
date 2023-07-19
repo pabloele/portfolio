@@ -32,25 +32,17 @@ export default function pokemon() {
          <br />
           <h2>Overview</h2>
           <p>
-            Aplicación desarrollada como proyecto individual durante el bootcamp
-            de Henry. La app permite a los usuarios ver tarjetas de Pokémon
-            obtenidas de una API externa. Implementé funcionalidades de
-            paginación, ordenamiento y filtros combinados. Además, los usuarios
-            pueden agregar y eliminar Pokémon de la base de datos. En el
-            frontend, utilicé React y CSS para crear una interfaz atractiva y
-            fácil de usar. En el backend, empleé Node.js y Express para manejar
-            las solicitudes y el flujo de datos. Para la persistencia, usé
-            PostgreSQL y Sequelize como base de datos y ORM.
+          La aplicación consiste en un dashboard para las bodegas, que permite administrar los redeems (canjes) de tokens, y una vista de administrador para  gestionar la información de todas las bodegas desde un perfil de superusuario. Cuenta además con autenticación con Metamask, desarrollo de un microservicio en express que para manejar las notificciones provinientes de otro servicio de Openvino, conectado al dashboard mediante web socket.  
           </p>
-          <button className="px-8 py-2 mt-4 mr-8 opacity-40">
-            {/* <a
-              href=""
+          <button className="px-8 py-2 mt-4 mr-8">
+            <Link
+              href="https://www.youtube.com/watch?v=5vNg5u-CbW4"
               target="_blank">
-            </a> */}
-            Demo
+            Video
+            </Link>
           </button>
           <button className="px-8 py-2 mt-4">
-            <Link href="https://github.com/pabloele/PokemonPI" target="_blank">
+            <Link href="https://github.com/openvino/redeem_dashboard" target="_blank">
               Code
             </Link>
           </button>
@@ -62,11 +54,11 @@ export default function pokemon() {
             <div className="grid grid-cols-3 md:grid-cols-1">
               <p className="text-gray-600 py-2 flex items-center">
                 <RiRadioButtonFill className="pr-1" />
-                React
+                Next jS
               </p>
               <p className="text-gray-600 py-2 flex items-center">
                 <RiRadioButtonFill className="pr-1" />
-                CSS
+                Tailwind CSS
               </p>
               <p className="text-gray-600 py-2 flex items-center">
                 <RiRadioButtonFill className="pr-1" />
@@ -80,12 +72,22 @@ export default function pokemon() {
                 <RiRadioButtonFill className="pr-1" />
                 Sequelize
               </p>
+              <p className="text-gray-600 py-2 flex items-center">
+                <RiRadioButtonFill className="pr-1" />
+                Metamask
+              </p>
+              <p className="text-gray-600 py-2 flex items-center">
+                <RiRadioButtonFill className="pr-1" />
+                Node.JS
+              </p>
+              <p className="text-gray-600 py-2 flex items-center">
+                <RiRadioButtonFill className="pr-1" />
+                Socket.io
+              </p>
             </div>
           </div>
         </div>
-        <Link href="/#proyects">
-          <p className="underline cursor-pointer">Volver</p>
-        </Link>
+ 
       </div>
     </div>
   );
