@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import mecanuImg from "../public/assets/proyects/mecanu.png";
 import { RiRadioButtonFill } from "react-icons/ri";
+import {FaAngleLeft} from "react-icons/fa"
 import Link from "next/link";
 export default function mecanu() {
   return (
@@ -20,9 +21,15 @@ export default function mecanu() {
           <h3>Next Js | Tailwind | Firebase | Postgresql | Express</h3>
         </div>
       </div>
+       <Link href="/#proyects">
+          
+          <div className="fixed m-4 rounded-full shadow-lg shadow-gray-400 cursor-pointer hover:scale-105 ease-in duration-200" >
+                    <FaAngleLeft size={30} className="text-[#5651e5]"/>
+          </div>
+        </Link>
       <div className="max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 pt-8 ">
         <div className="col-span-4">
-          <p>Mecanu Web-app</p>
+          <br />
           <h2>Overview</h2>
           <p>
             {`Pasantía trabajando junto con un equipo en el desarrollo de la web

@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import netflixImg from "../public/assets/proyects/netflix.jpg";
-import { RiRadioButtonFill , RiSkipBackFill} from "react-icons/ri";
+import { RiRadioButtonFill} from "react-icons/ri";
 import {FaAngleLeft} from "react-icons/fa"
 export default function pokemon() {
   return (
