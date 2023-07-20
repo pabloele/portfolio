@@ -41,13 +41,9 @@ export default function mecanu() {
       <div className="max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 pt-8 ">
         <div className="col-span-4">
           <br />
-          <h2>Overview</h2>
-          <p>
-            {`Portfolio full responsive realizado en Next Js version 13, utilizando Tailwind`}
-          </p>
-          <button className="px-8 py-2 mt-4 mr-8">
-            <Link href="/#main">Deploy</Link>
-          </button>
+          <h2>{t("Overview")}</h2>
+          <p>{t("portfolioDescription")}</p>
+
           <button className="px-8 py-2 mt-4">
             <Link href="https://github.com/pabloele/portfolio" target="_blank">
               Code

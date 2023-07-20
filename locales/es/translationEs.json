@@ -21,7 +21,9 @@
     "mecanuDescription": "Pasantía en el equipo en el desarrollo de la web app de esta innovadora startup chilena que brinda servicios de mecánica a domicilio. La aplicación permite a los usuarios registrarse, seleccionar servicios para sus vehículos y recibir una cotización instantánea. Como desarrollador 'full stack', desempeñé un papel dinámico, participando tanto en el front-end como en el back-end, utilizando metodologías ágiles y tecnologías como Next.js, Tailwind, Express, Postgresql, Sequelize, Firebase, Mercado Pago y Sendgrid. También implementé la funcionalidad de Progressive Web App (PWA).",
     "Tecnologias":"Tecnologías",
     "netflixDescription":"Trabajo de frontend imitando el conocido servicio de streaming. Permite visualizar tarjetas de peliculas de la API de IMDB, permitiendo crear perfiles de usuario y guardar sus películas favoritas. Para la  autenticación se utilizó FIREBASE y para la base de datos, FIRESTORE.",
-     "Overview": "Descripción",
-  "pokemonDescription": "Aplicación desarrollada como proyecto individual durante el bootcamp de Henry. La app permite a los usuarios ver tarjetas de Pokémon obtenidas de una API externa. Fueron implementadas las funcionalidades de paginación, ordenamiento, filtros combinados y CRUD completo. Backend realizado en Node.js y Express, con PostgreSQL y Sequelize como base de datos y ORM."
+    "Overview": "Descripción",
+    "pokemonDescription": "Aplicación desarrollada como proyecto individual durante el bootcamp de Henry. La app permite a los usuarios ver tarjetas de Pokémon obtenidas de una API externa. Fueron implementadas las funcionalidades de paginación, ordenamiento, filtros combinados y CRUD completo. Backend realizado en Node.js y Express, con PostgreSQL y Sequelize como base de datos y ORM.",
+    "portfolioDescription": "Portfolio full responsive realizado en Next Js y Tailwind",
+    "openvinoDescription": "La aplicación consiste en un dashboard para las bodegas, que permite administrar los redeems (canjes) de tokens, y una vista de administrador para gestionar la información de todas las bodegas desde un perfil de superusuario. Cuenta además con autenticación con Metamask, desarrollo de un microservicio en express que para manejar las notificciones provinientes de otro servicio de Openvino, conectado al dashboard mediante web socket."
 
 }
