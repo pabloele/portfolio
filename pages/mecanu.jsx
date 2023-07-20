@@ -5,6 +5,7 @@ import { RiRadioButtonFill } from "react-icons/ri";
 import { FaAngleLeft } from "react-icons/fa";
 import Link from "next/link";
 import { Bruno_Ace, Roboto_Mono } from "next/font/google";
+import { useTranslation } from "next-i18next";
 const bruno_ace = Bruno_Ace({
   subsets: [],
   weight: "400",
@@ -14,7 +15,9 @@ const font2 = Roboto_Mono({
   subsets: [],
   weight: "400",
 });
-export default function mecanu() {
+
+export default function Mecanu() {
+  const { t } = useTranslation();
   return (
     <div className={"w-full" && font2.className}>
       <div className="w-screen h-[30vh] lg:h-[40vh] relative">
@@ -39,32 +42,21 @@ export default function mecanu() {
       <div className="max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 pt-8 ">
         <div className="col-span-4">
           <br />
-          <h2>Overview</h2>
-          <p>
-            {`Pasantía trabajando junto con un equipo en el desarrollo de la web
-              app de esta innovadora startup chilena que brinda servicios de
-              mecánica a domicilio. La aplicación permite a los usuarios
-              registrarse, seleccionar servicios para sus vehículos y recibir una
-              cotización instantánea. Como desarrollador "full stack", desempeñé
-              un papel dinámico, participando tanto en el front-end como en el
-              back-end, utilizando metodologías ágiles y tecnologías como Next.js,
-              Tailwind, Express, Postgresql, Sequelize, Firebase, Mercado Pago y
-              Sendgrid. También implementé la funcionalidad de Progressive Web App
-              (PWA).`}
-          </p>
+          <h2>{t("Overview")}</h2>
+          <p>{t("mecanuDescription")}</p>
           <button className="px-8 py-2 mt-4 mr-8">
             <a
               href="https://www.youtube.com/watch?v=y2llAQlPcPE"
               target="_blank"
             >
-              Demo
+              Video
             </a>
           </button>
           {/* <button className="px-8 py-2 mt-4">Code</button> */}
         </div>
         <div className="col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl p-4">
           <div className="p-2">
-            <h4 className="text-bold underline">Tecnologías</h4>
+            <h4 className="text-bold underline">{t("Tecnologias")}</h4>
 
             <div className="grid grid-cols-3 md:grid-cols-1">
               <p className="text-gray-600 py-2 flex items-center">
@@ -106,9 +98,9 @@ export default function mecanu() {
           <p className="underline cursor-pointer">Volver</p>
         </Link>
       */}
-        <Link href="/#proyects" className="scroll-ms-0.5">
+        {/* <Link href="/#proyects" className="scroll-ms-0.5">
           <p className="underline cursor-pointer">Volver</p>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import pokemonImg from "../public/assets/proyects/pokemon.png";
 import { RiRadioButtonFill } from "react-icons/ri";
 import { FaAngleLeft } from "react-icons/fa";
 import { Bruno_Ace, Roboto_Mono } from "next/font/google";
+import { useTranslation } from "next-i18next";
 const bruno_ace = Bruno_Ace({
   subsets: [],
   weight: "400",
@@ -15,6 +16,7 @@ const font2 = Roboto_Mono({
   weight: "400",
 });
 export default function pokemon() {
+  const { t } = useTranslation();
   return (
     <div className={"w-full" && font2.className}>
       <div className="w-screen h-[30vh] lg:h-[40vh] relative">
@@ -39,16 +41,8 @@ export default function pokemon() {
       <div className="max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 pt-8 ">
         <div className="col-span-4">
           <br />
-          <h2>Overview</h2>
-          <p>
-            La aplicación consiste en un dashboard para las bodegas, que permite
-            administrar los redeems (canjes) de tokens, y una vista de
-            administrador para gestionar la información de todas las bodegas
-            desde un perfil de superusuario. Cuenta además con autenticación con
-            Metamask, desarrollo de un microservicio en express que para manejar
-            las notificciones provinientes de otro servicio de Openvino,
-            conectado al dashboard mediante web socket.
-          </p>
+          <h2>{t("Overview")}</h2>
+          <p>{t("openvinoDescription")}</p>
           <button className="px-8 py-2 mt-4 mr-8">
             <Link
               href="https://www.youtube.com/watch?v=5vNg5u-CbW4"
@@ -68,7 +62,7 @@ export default function pokemon() {
         </div>
         <div className="col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl p-4">
           <div className="p-2">
-            <h4 className="text-bold underline">Tecnologías</h4>
+            <h4 className="text-bold underline">{t("Tecnologias")}</h4>
 
             <div className="grid grid-cols-3 md:grid-cols-1">
               <p className="text-gray-600 py-2 flex items-center">

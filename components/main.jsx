@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from "react";
-import style from "./main.module.css";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import Link from "next/link";
 import { Bruno_Ace } from "next/font/google";
-import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
+import { FiFileText } from "react-icons/fi";
+
+// import { useRouter } from "next/router";
 const bruno_ace = Bruno_Ace({
   subsets: [],
   weight: "400",
 });
 
 export default function Main() {
+  const { t } = useTranslation();
   const handleDefaultMail = () => {
     const email = "pabloelevy@gmail.com";
     const subject = "";
@@ -61,18 +64,15 @@ export default function Main() {
       <div id="main" className="w-full h-screen text-center font-extrabold">
         <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
           <div>
-            <h1
-              className="py-4 text-gray-700 "
-              // className={style.titles}
-            >
-              Hola! Soy
+            <h1 className="py-4 text-gray-700 ">
+              {t("Hola! Soy")}
               <span className="text-[#5651e5]"> Pablo.</span>
             </h1>
             <p className="uppercase text-sm tracking-widest text-gray-600">
-              Soy un desarrollador web full stack
+              {t("Soy un desarrollador web full stack")}.
             </p>
             <p className="uppercase text-sm tracking-widest text-gray-600 font">
-              Este es mi Portfolio.
+              {t("Este es mi Portfolio")}.
             </p>
             <div className="flex items-center justify-between max-w-[330px] m-auto py-4">
               <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
@@ -103,7 +103,7 @@ export default function Main() {
                 className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300"
                 onClick={handleDownload}
               >
-                <BsFillPersonLinesFill />
+                <FiFileText />
               </div>
               {/* CV Pablo Levy - fullstack .pdf */}
             </div>
