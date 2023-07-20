@@ -16,7 +16,7 @@ const font2 = Roboto_Mono({
   weight: "400",
 });
 
-export default function mecanu() {
+export default function Mecanu() {
   const { t } = useTranslation();
   return (
     <div className={"w-full" && font2.className}>

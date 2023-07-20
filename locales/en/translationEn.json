@@ -22,5 +22,6 @@
     "mecanuDescription": "Internship working on the web app for this innovative Chilean startup that provides home mechanic services. The application allows users to register, select services for their vehicles, and receive an instant quote. As a 'full-stack' developer, I played a dynamic role, participating in both the front-end and back-end, using agile methodologies and technologies such as Next.js, Tailwind, Express, Postgresql, Sequelize, Firebase, Mercado Pago, and Sendgrid. I also implemented the Progressive Web App (PWA) functionality.",
     "Tecnologias": "Technologies",
     "netflixDescription": "Frontend work imitating the well-known streaming service. It allows viewing movie cards from the IMDB API, enabling users to create profiles and save their favorite movies. FIREBASE was used to provide authentication while FIRESTORE was utilized as the database.",
-    "Overview": "Overview"
+    "Overview": "Overview",
+    "pokemonDescription": "Application developed as an individual project during the Henry bootcamp. The app allows users to view Pokémon cards obtained from an external API. Pagination, sorting, combined filters, and full CRUD functionality were implemented. The backend was built using Node.js and Express, with PostgreSQL and Sequelize as the database and ORM."
 }

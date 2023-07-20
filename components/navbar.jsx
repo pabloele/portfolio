@@ -8,6 +8,7 @@ import { BsFillPersonLinesFill } from "react-icons/bs";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { Bruno_Ace } from "next/font/google";
+import { FiFileText } from "react-icons/fi";
 import { useTranslation } from "next-i18next";
 const bruno_ace = Bruno_Ace({
   subsets: [],
@@ -38,7 +39,13 @@ export default function Navbar(props) {
   };
 
   useEffect(() => {
-    if (router.asPath === "/mecanu" || router.asPath === "/pokemon") {
+    if (
+      router.asPath === "/mecanu" ||
+      router.asPath === "/pokemon" ||
+      router.asPath === "/netflix" ||
+      router.asPath === "/portfolio" ||
+      router.asPath === "/openvino"
+    ) {
       setNavbg("transparent");
       setLinkColor("#ecf0f3");
     } else {
@@ -223,7 +230,7 @@ export default function Navbar(props) {
                       className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200"
                       onClick={handleDownload}
                     >
-                      <BsFillPersonLinesFill />
+                      <FiFileText />
                     </div>
                   </div>
                 </div>
@@ -271,7 +278,7 @@ export default function Navbar(props) {
           </div>
           <div>
             <button
-              className="opacity-50 text-black font-bold"
+              className="opacity-70 text-black font-extrabold"
               onClick={toggleLanguage}
             >
               {lang}

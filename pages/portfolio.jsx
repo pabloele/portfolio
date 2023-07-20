@@ -5,6 +5,7 @@ import { RiRadioButtonFill } from "react-icons/ri";
 import { FaAngleLeft } from "react-icons/fa";
 import Link from "next/link";
 import { Bruno_Ace, Roboto_Mono } from "next/font/google";
+import { useTranslation } from "next-i18next";
 const bruno_ace = Bruno_Ace({
   subsets: [],
   weight: "400",
@@ -15,6 +16,7 @@ const font2 = Roboto_Mono({
   weight: "400",
 });
 export default function mecanu() {
+  const { t } = useTranslation();
   return (
     <div className={"w-full" && font2.className}>
       <div className="w-screen h-[30vh] lg:h-[40vh] relative">
@@ -54,7 +56,7 @@ export default function mecanu() {
         </div>
         <div className="col-span-4 md:col-span-1 shadow-xl shadow-gray-400 rounded-xl p-4">
           <div className="p-2">
-            <h4 className="text-bold underline">Tecnologías</h4>
+            <h4 className="text-bold underline">{t("Tecnologias")}</h4>
 
             <div className="grid grid-cols-3 md:grid-cols-1">
               <p className="text-gray-600 py-2 flex items-center">
@@ -68,10 +70,6 @@ export default function mecanu() {
             </div>
           </div>
         </div>
-
-        <Link href="/#proyects" className="scroll-ms-0.5">
-          <p className="underline cursor-pointer">Volver</p>
-        </Link>
       </div>
     </div>
   );

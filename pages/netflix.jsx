@@ -15,7 +15,7 @@ const font2 = Roboto_Mono({
   subsets: [],
   weight: "400",
 });
-export default function pokemon() {
+export default function Netflix() {
   const { t } = useTranslation();
   return (
     <div className={"w-full" && font2.className}>
