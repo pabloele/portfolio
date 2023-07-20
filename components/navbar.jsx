@@ -8,13 +8,13 @@ import { BsFillPersonLinesFill } from "react-icons/bs";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { Bruno_Ace } from "next/font/google";
-
+import { useTranslation } from "next-i18next";
 const bruno_ace = Bruno_Ace({
   subsets: [],
   weight: "400",
 });
 
-export default function Navbar() {
+export default function Navbar(props) {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
   const [navBg, setNavbg] = useState("#ecf0f3");
@@ -23,6 +23,20 @@ export default function Navbar() {
   const handleNav = () => {
     setNav(!nav);
   };
+  const { t, i18n } = useTranslation();
+
+  const [lang, setLang] = useState("es");
+
+  const toggleLanguage = () => {
+    if (lang === "en") {
+      setLang("es");
+      i18n.changeLanguage("es");
+    } else {
+      setLang("en");
+      i18n.changeLanguage("en");
+    }
+  };
+
   useEffect(() => {
     if (router.asPath === "/mecanu" || router.asPath === "/pokemon") {
       setNavbg("transparent");
@@ -63,7 +77,16 @@ export default function Navbar() {
     link.click();
     document.body.removeChild(link);
   };
-
+  const { locale, locales, push } = useRouter();
+  const handleClick = () => {
+    if (locale === "es") {
+      push("/", undefined, { locale: "en" });
+      console.log("locale", locale);
+    } else {
+      push("/", undefined, { locale: "es" });
+      console.log("locale", locale);
+    }
+  };
   return (
     <div className={bruno_ace.className}>
       <div
@@ -132,7 +155,7 @@ export default function Navbar() {
                         setNav(false);
                       }}
                     >
-                      {"About"}
+                      {t("About")}
                     </Link>
                   </li>
                   <li className="py-4 text-sm uppercase hover:border-b">
@@ -143,7 +166,7 @@ export default function Navbar() {
                         setNav(false);
                       }}
                     >
-                      {"Skills"}
+                      {t("Skills")}
                     </Link>
                   </li>
                   <li className="py-4 text-sm uppercase hover:border-b">
@@ -153,7 +176,7 @@ export default function Navbar() {
                         setNav(false);
                       }}
                     >
-                      {"Proyectos"}
+                      {t("Proyectos")}
                     </Link>
                   </li>
                   <li className="py-4 text-sm uppercase hover:border-b">
@@ -163,13 +186,13 @@ export default function Navbar() {
                         setNav(false);
                       }}
                     >
-                      {"Contacto"}
+                      {t("Contacto")}
                     </Link>
                   </li>
                 </ul>
                 <div className="pt-10">
                   <p className="uppercase tracking-widest text-[#5651e5]">
-                    Mis redes
+                    {t("Mis redes")}
                   </p>
                   <div className="flex items-left justify-between my-4 w-full sm:w-[80%]">
                     <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
@@ -224,26 +247,35 @@ export default function Navbar() {
               className="ld:flex justify-end px-7  md:flex hidden "
             >
               <li className="ml-10 text-sm uppercase hover:border-b scroll-smooth">
-                <Link href="/#main">Home</Link>
+                <Link href="/#main">{t("Inicio")}</Link>
               </li>
               <li className="ml-10 text-sm uppercase hover:border-b scroll-smooth ">
-                <Link href="/#about">About</Link>
+                <Link href="/#about">{t("About")}</Link>
               </li>
               <li className="ml-10 text-sm uppercase hover:border-b">
-                <Link href="/#skills">Skills</Link>
+                <Link href="/#skills">{t("Skills")}</Link>
               </li>
               <li className="ml-10 text-sm uppercase hover:border-b">
-                <Link href="/#proyects">Proyectos</Link>
+                <Link href="/#proyects">{t("Proyectos")}</Link>
               </li>
               <li className="ml-10 text-sm uppercase hover:border-b">
                 <Link href="/#contact" className={style.link}>
-                  Contacto
+                  {t("Contacto")}
                 </Link>
               </li>
             </ul>
           </div>
+          <div></div>
           <div onClick={handleNav} className="md:hidden float-right px-7">
             <AiOutlineMenu size={25} />
+          </div>
+          <div>
+            <button
+              className="opacity-50 text-black font-bold"
+              onClick={toggleLanguage}
+            >
+              {lang}
+            </button>
           </div>
         </div>
       </div>

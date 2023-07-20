@@ -5,6 +5,7 @@ import netflixImg from "../public/assets/proyects/netflix.jpg";
 import { RiRadioButtonFill } from "react-icons/ri";
 import { FaAngleLeft } from "react-icons/fa";
 import { Bruno_Ace, Roboto_Mono } from "next/font/google";
+import { useTranslation } from "next-i18next";
 const bruno_ace = Bruno_Ace({
   subsets: [],
   weight: "400",
@@ -15,6 +16,7 @@ const font2 = Roboto_Mono({
   weight: "400",
 });
 export default function pokemon() {
+  const { t } = useTranslation();
   return (
     <div className={"w-full" && font2.className}>
       <div className="w-screen h-[30vh] lg:h-[40vh] relative">
@@ -39,14 +41,8 @@ export default function pokemon() {
       <div className="max-w-[1240px] mx-auto p-2 grid md:grid-cols-5 gap-8 pt-8 ">
         <div className="col-span-4">
           <br></br>
-          <h2>Overview</h2>
-          <p>
-            Trabajo de frontend imitando el conocido servicio de streaming que
-            permite visualizar cards de peliculas de la API de IMDB, permitiendo
-            crear perfiles de usuario y guardar sus películas favoritas. Para la
-            autenticación se utilizó FIREBASE y para la base de datos,
-            FIRESTORE.
-          </p>
+          <h2>{t("Overview")}</h2>
+          <p>{t("netflixDescription")}</p>
 
           <button className="px-8 py-2 mt-4 mr-8">
             <Link

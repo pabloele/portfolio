@@ -7,6 +7,7 @@ import netflixImg from "../public/assets/proyects/netflix.jpg";
 import openvinoImg from "../public/assets/proyects/openvino.png";
 import Link from "next/link";
 import { Bruno_Ace, Roboto_Mono } from "next/font/google";
+import { useTranslation } from "next-i18next";
 const Bruno_ace = Bruno_Ace({
   subsets: [],
   weight: "400",
@@ -17,6 +18,7 @@ const Bruno_ace = Bruno_Ace({
 //   weight: "400",
 // });
 export default function Proyects() {
+  const { t } = useTranslation();
   return (
     <div
       id="proyects"
@@ -32,7 +34,7 @@ export default function Proyects() {
           <br />
           <br />
           <h2 className=" tracking-widest text-[#121114] text-left pb-4">
-            {"<Proyectos />"}
+            {t("<Proyectos />")}
           </h2>
           {/* <h2 className="text-left">Destacados</h2> */}
         </div>

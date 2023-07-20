@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { Bruno_Ace, Roboto_Mono } from "next/font/google";
+import { useTranslation } from "next-i18next";
 const bruno_ace = Bruno_Ace({
   subsets: [],
   weight: "400",
@@ -11,6 +12,7 @@ const font2 = Roboto_Mono({
   weight: "400",
 });
 export default function Skills() {
+  const { t } = useTranslation();
   return (
     <div className={"my-10 py-80 min-h-screen" && bruno_ace.className}>
       <div
@@ -18,7 +20,7 @@ export default function Skills() {
         className="w-full  p-2 sm:mx-5 md:mx-0 pt-24 font-semibold"
       >
         <div className="max-w-[1240px]  mx-auto ">
-          <h2 className=" tracking-widest text-[#121114]">{" < Skills />"}</h2>
+          <h2 className=" tracking-widest text-[#121114]">{t("<Skills />")}</h2>
           {/* <h2>Qué puedo hacer</h2> */}
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

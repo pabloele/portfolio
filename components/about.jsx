@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
+
 import { Bruno_Ace, Roboto_Mono } from "next/font/google";
 const bruno_ace = Bruno_Ace({
   subsets: [],
@@ -12,6 +14,7 @@ const montserrat = Roboto_Mono({
   weight: "400",
 });
 export default function About() {
+  const { t } = useTranslation();
   return (
     <div className={"min-h-screen" && bruno_ace.className}>
       <div
@@ -34,7 +37,7 @@ export default function About() {
             <br />
             <br />
 
-            <h2>{" <About/>"}</h2>
+            <h2>{t("<About/>")}</h2>
             {/* <h2>Quién soy</h2> */}
             {/* <p className="py-5 text-lg">
             {
@@ -45,15 +48,10 @@ export default function About() {
               <p
                 className={"py-5 text-xl font-semibold" && montserrat.className}
               >
-                ¡Bienvenid@! Soy un desarrollador web full stack. Actualmente
-                estoy enfocado en construir aplicaciones responsivas que
-                resuelvan problemas reales. Me apasiona integrar nuevas
-                tecnologías a mis proyectos (you´ll break it until you make it
-                😊). En esta página podrás navegar por algunos de mis trabajos.
-                ¿Te gusta lo que ves?
+                {t("description")}
                 <Link href="/#contact" className="text-[#5651e5] font-bold">
                   {" "}
-                  Conecta!!{" "}
+                  {t("Conecta")}!!{" "}
                 </Link>
               </p>
             </div>
@@ -64,50 +62,4 @@ export default function About() {
       </div>
     </div>
   );
-}
-
-// import React from "react";
-// import Image from "next/image";
-
-// export default function About() {
-//   return (
-//     <div className="w-full md:hscreen p-2 flex items-center py-16">
-//       <div className="max-w-[1240px] m-auto -md:grid grid-cols-3 gap-8 flex">
-//         <div className="col-span-2">
-//           <h1>About</h1>
-//           {/* <h2>Quién soy</h2> */}
-//           <p>
-//             Hola, soy un desarrollador web full stack, apasionado por crear
-//             soluciones innovadoras que resuelvan problemas reales. Mis skills en
-//             React, Node, Express, SQL, NextJs, Html, Css, Firebase, entre otras,
-//             me permiten desarrollar aplicaciones web dinámicas y escalables, y
-//             constantemente me esfuerzo por perfeccionar mis habilidades.{" "}
-//           </p>
-//           {/* <p>Parrafo 2</p>
-//           <p>Parrafo 3</p> */}
-//         </div>
-//       </div>
-//       <div className="w-full h-auto m-auto shadow-xl shadow-gray-400 rounded-xl flex items-center justify-center p-4 hover:scale-105 ease-in duration-300">
-//         <img
-//           src="/assets/fondoln2.jpg"
-//           alt="profile picture"
-//           width="150"
-//           height="150"
-//           style={{ borderRadius: "0.75rem" }}
-//         />
-//       </div>
-//     </div>
-//   );
-// }
-
-{
-  /* <div className="w-[370px] h-[370px] m-auto shadow-xl shadow-gray-400 rounded-full flex items-center justify-center p-4 hover:scale-105 ease-in duration-300">
-          <Image
-            src="/assets/fondoln2.jpg"
-            alt="profile picture"
-            width="350"
-            height="350"
-            style={{ borderRadius: "100%" }}
-          />
-        </div> */
 }

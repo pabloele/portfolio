@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import { BsFillPersonLinesFill } from "react-icons/bs";
 import Link from "next/link";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { HiOutlineChevronDoubleUp } from "react-icons/hi";
@@ -9,7 +8,10 @@ import contactImg from "../public/assets/contactus.jpg";
 import { useState } from "react";
 import emailjs from "emailjs-com";
 import { useRouter } from "next/router";
+import { FiFileText } from "react-icons/fi";
 import { Bruno_Ace, Roboto_Mono } from "next/font/google";
+import { useTranslation } from "next-i18next";
+
 const Bruno_ace = Bruno_Ace({
   subsets: [],
   weight: "400",
@@ -21,6 +23,7 @@ const font2 = Roboto_Mono({
 });
 
 export default function Contact() {
+  const { t } = useTranslation();
   const router = useRouter();
   const form = useRef();
 
@@ -155,6 +158,7 @@ export default function Contact() {
     link.click();
     document.body.removeChild(link);
   };
+
   return (
     <div
       id="contact"
@@ -169,7 +173,7 @@ export default function Contact() {
         "
         >
           <br />
-          <h2 className="text-[#121114] ">{"<Contacto />"}</h2>
+          <h2 className="text-[#121114] ">{t("<Contacto />")}</h2>
           {/* <h2 className="py-4 ">{""}</h2> */}
         </div>
         <div className="grid lg:grid-cols-5 gap 8">
@@ -220,7 +224,8 @@ export default function Contact() {
                     onClick={handleDownload}
                     className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200"
                   >
-                    <BsFillPersonLinesFill />
+                    {/* <BsFillPersonLinesFill /> */}
+                    <FiFileText />
                   </div>
                 </div>
               </div>
@@ -231,7 +236,9 @@ export default function Contact() {
             <div className="flex flex-col gap-4">
               <form ref={form} onSubmit={sendEmail} className={font2.className}>
                 <div className="flex flex-col">
-                  <label className="uppercase text-sm py-2">Nombre</label>
+                  <label className="uppercase text-sm py-2">
+                    {t("Nombre")}
+                  </label>
                   <input
                     className={
                       errors.user_name === "invalid"
@@ -246,7 +253,7 @@ export default function Contact() {
                 </div>
                 <div className="flex flex-col">
                   <label className="uppercase text-sm py-2">
-                    Teléfono (opcional)
+                    {t("Teléfono (opcional)")}
                   </label>
                   <input
                     className="border-2 rounded-lg p-3 flex border-gray-300"
@@ -271,7 +278,9 @@ export default function Contact() {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <label className="uppercase text-sm py-2">Subject</label>
+                  <label className="uppercase text-sm py-2">
+                    {t("Subject")}
+                  </label>
                   <input
                     className={
                       errors.user_subject === "invalid"
@@ -285,7 +294,9 @@ export default function Contact() {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <label className="uppercase text-sm py-2">Mensaje</label>
+                  <label className="uppercase text-sm py-2">
+                    {t("Mensaje")}
+                  </label>
                   <textarea
                     className={
                       errors.user_email === "invalid"
@@ -303,7 +314,7 @@ export default function Contact() {
                   // type="submit"
                   className="w-full p-4 text-gray-100 mt-4"
                 >
-                  Enviar Mensaje
+                  {t("Enviar Mensaje")}
                 </button>
               </form>
             </div>
