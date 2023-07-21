@@ -330,11 +330,9 @@ export default function Skills() {
                 tecnologías seleccionadas!
               </h4>
 
-              {getProjectsBySelectedSkills().map((project) => (
-                <Link href={project.path}>
-                  <span key={project.name} className="mr-8">
-                    {project.name}
-                  </span>
+              {getProjectsBySelectedSkills().map((project, index) => (
+                <Link href={project.path} key={index}>
+                  <span style={{ marginRight: "4px" }}>{project.name}</span>
                 </Link>
               ))}
             </div>
