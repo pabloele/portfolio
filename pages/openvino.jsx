@@ -5,7 +5,7 @@ import pokemonImg from "../public/assets/proyects/pokemon.png";
 import { RiRadioButtonFill } from "react-icons/ri";
 import { FaAngleLeft } from "react-icons/fa";
 import { Bruno_Ace, Roboto_Mono } from "next/font/google";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 const bruno_ace = Bruno_Ace({
   subsets: [],
   weight: "400",
@@ -15,7 +15,7 @@ const font2 = Roboto_Mono({
   subsets: [],
   weight: "400",
 });
-export default function pokemon() {
+export default function Pokemon() {
   const { t } = useTranslation();
   return (
     <div className={"w-full" && font2.className}>
@@ -30,7 +30,7 @@ export default function pokemon() {
         />
         <div className="absolute top-[70%] max-w-[1240px] w-full left-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2 px-10">
           <h2>Openvino</h2>
-          <h3>React | Css puro | Postgresql | Express</h3>
+          <h3>React | Tailwind CSS | Postgresql | Express | Metamask</h3>
         </div>
       </div>
       <Link href="/#proyects">

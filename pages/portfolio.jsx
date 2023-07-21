@@ -5,7 +5,7 @@ import { RiRadioButtonFill } from "react-icons/ri";
 import { FaAngleLeft } from "react-icons/fa";
 import Link from "next/link";
 import { Bruno_Ace, Roboto_Mono } from "next/font/google";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 const bruno_ace = Bruno_Ace({
   subsets: [],
   weight: "400",
@@ -15,7 +15,7 @@ const font2 = Roboto_Mono({
   subsets: [],
   weight: "400",
 });
-export default function mecanu() {
+export default function Mecanu() {
   const { t } = useTranslation();
   return (
     <div className={"w-full" && font2.className}>

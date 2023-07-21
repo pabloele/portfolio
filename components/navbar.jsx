@@ -4,12 +4,11 @@ import Link from "next/link";
 import style from "./navbar.module.css";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import { BsFillPersonLinesFill } from "react-icons/bs";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { Bruno_Ace } from "next/font/google";
 import { FiFileText } from "react-icons/fi";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 const bruno_ace = Bruno_Ace({
   subsets: [],
   weight: "400",
@@ -125,7 +124,8 @@ export default function Navbar(props) {
                       setNav(false);
                     }}
                   >
-                    {" < /> "}
+                    {" <"} <span className="text-[#5651e5]">/</span>
+                    {">"}
                   </Link>
                 </h1>
 
@@ -162,7 +162,7 @@ export default function Navbar(props) {
                         setNav(false);
                       }}
                     >
-                      {t("About")}
+                      {t("Abt")}
                     </Link>
                   </li>
                   <li className="py-4 text-sm uppercase hover:border-b">
@@ -239,12 +239,14 @@ export default function Navbar(props) {
           </div>
         </div>
         <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16 ">
-          <div className={style.titles}>
-            <h1
-              className="font-vt323 py-10 font-bold text-xl md:text-2xl  cursor-pointer"
-              style={{ color: `${linkColor}` }}
-            >
-              <Link href="/#main">{" <Pablo Levy /> "}</Link>
+          <div className={bruno_ace.className}>
+            <h1 className=" py-10 font-extrabold text-[1.5rem] md:text-[1.5] lg:text-[2rem] cursor-pointer italic">
+              <Link href="/#main">
+                <p className=" ">
+                  {" <Pablo Levy"} <span className="text-[#5651e5]">/</span>
+                  {">"}
+                </p>
+              </Link>
             </h1>
           </div>
 
@@ -257,7 +259,7 @@ export default function Navbar(props) {
                 <Link href="/#main">{t("Inicio")}</Link>
               </li>
               <li className="ml-10 text-sm uppercase hover:border-b scroll-smooth ">
-                <Link href="/#about">{t("About")}</Link>
+                <Link href="/#about">{t("Abt")}</Link>
               </li>
               <li className="ml-10 text-sm uppercase hover:border-b">
                 <Link href="/#skills">{t("Skills")}</Link>

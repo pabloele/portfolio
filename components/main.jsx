@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
-import { BsFillPersonLinesFill } from "react-icons/bs";
 import Link from "next/link";
 import { Bruno_Ace } from "next/font/google";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 import { FiFileText } from "react-icons/fi";
 
 // import { useRouter } from "next/router";
