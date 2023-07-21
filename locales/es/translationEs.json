@@ -1,5 +1,5 @@
 {
-    "<About/>": "<Sobre mí/>",
+    "Abt": "Sobre mí",
     "description": "¡Bienvenid@! Soy un desarrollador web full stack. Actualmente estoy enfocado en construir aplicaciones responsivas que resuelvan problemas reales. Me apasiona integrar nuevas tecnologías a mis proyectos (you'll break it until you make it 😊). En esta página podrás navegar por algunos de mis trabajos. ¿Te gusta lo que ves?",
     "Conecta":"Conecta",
     "Skills":"Tecnologías",
@@ -8,7 +8,6 @@
     "Inicio":"Inicio",
     "About":"Sobre mí",
     "Mis redes":"Mis redes",
-    "<Skills />":"<Tecnologías />",
     "Nombre":"Nombre",
     "Teléfono (opcional)":"Teléfono (opcional)",
     "Enviar Mensaje":"Enviar Mensaje",

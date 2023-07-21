@@ -10,7 +10,7 @@ import emailjs from "emailjs-com";
 import { useRouter } from "next/router";
 import { FiFileText } from "react-icons/fi";
 import { Bruno_Ace, Roboto_Mono } from "next/font/google";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 
 const Bruno_ace = Bruno_Ace({
   subsets: [],
@@ -173,7 +173,11 @@ export default function Contact() {
         "
         >
           <br />
-          <h2 className="text-[#121114] ">{t("<Contacto />")}</h2>
+          <h2 className="text-[#121114] ">
+            {"<"}
+            {t("Contacto")}
+            {"/>"}
+          </h2>
           {/* <h2 className="py-4 ">{""}</h2> */}
         </div>
         <div className="grid lg:grid-cols-5 gap 8">

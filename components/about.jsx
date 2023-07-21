@@ -1,8 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useTranslation } from "next-i18next";
-
+import { useTranslation } from "react-i18next";
 import { Bruno_Ace, Roboto_Mono } from "next/font/google";
 const bruno_ace = Bruno_Ace({
   subsets: [],
@@ -37,7 +36,11 @@ export default function About() {
             <br />
             <br />
 
-            <h2>{t("<About/>")}</h2>
+            <h2>
+              {"<"}
+              {t("Abt")}
+              {"/>"}
+            </h2>
             {/* <h2>Quién soy</h2> */}
             {/* <p className="py-5 text-lg">
             {
