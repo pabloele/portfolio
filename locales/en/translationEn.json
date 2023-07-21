@@ -3,7 +3,7 @@
   "description": "Welcome! I am a full-stack web developer. Currently, I am focused on building responsive applications that solve real-world problems. I am passionate about integrating new technologies into my projects (you'll break it until you make it 😊). On this page, you can browse through some of my work. Do you like what you see?",
   "Conecta": "Connect",
   "Skills": "Skills",
-  "<Proyectos />": "Projects",
+  "<Proyectos />": "<Projects />",
   "Contacto": "Contact me",
   "Inicio": "Home",
   "Mis redes": "My networks",
