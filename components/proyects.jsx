@@ -53,9 +53,11 @@ export default function Proyects() {
               <p className="pb-4 pt-2 text-white text-center">
                 Next-Postgresql <br /> Metamask-Tailwind
               </p>
-              <p className="text-center py-3 rounded-lg bg-white text-gray-700 font-bold text-lg cursor-pointer">
-                <Link href="/openvino">Ver más</Link>
-              </p>
+              <Link href="/openvino">
+                <p className="text-center py-3 rounded-lg bg-white text-gray-700 font-bold text-lg cursor-pointer">
+                  Ver más
+                </p>
+              </Link>
             </div>
           </div>
           <div className="relative flex items-center justify-center shadow-xl shadow-gray-400 rounded-xl p-4 group hover:bg-gradient-to-r from-[#5651d5] to-[#709dff]">
@@ -93,9 +95,11 @@ export default function Proyects() {
               <p className="pb-4 pt-2 text-white text-center">
                 React - Tailwind - Firebase - Firestore
               </p>
-              <p className="text-center py-3 rounded-lg bg-white text-gray-700 font-bold text-lg cursor-pointer">
-                <Link href="/netflix">Ver más</Link>
-              </p>
+              <Link href="/netflix">
+                <p className="text-center py-3 rounded-lg bg-white text-gray-700 font-bold text-lg cursor-pointer">
+                  Ver más
+                </p>
+              </Link>
             </div>
           </div>
           <div className="relative flex items-center justify-center h-auto w-full shadow-xl shadow-gray-400 rounded-xl p-4 group hover:bg-gradient-to-r from-[#5651d5] to-[#709dff]">
@@ -112,9 +116,11 @@ export default function Proyects() {
               <p className="pb-4 pt-2 text-white text-center">
                 React - Express - Postgresql - Firebase
               </p>
-              <p className="text-center py-3 rounded-lg bg-white text-gray-700 font-bold text-lg cursor-pointer">
-                <Link href="/pokemon">Ver más</Link>
-              </p>
+              <Link href="/pokemon">
+                <p className="text-center py-3 rounded-lg bg-white text-gray-700 font-bold text-lg cursor-pointer">
+                  Ver más
+                </p>
+              </Link>
             </div>
           </div>
           <div className="relative flex items-center justify-center shadow-xl shadow-gray-400 rounded-xl p-4 group hover:bg-gradient-to-r from-[#5651d5] to-[#709dff]">

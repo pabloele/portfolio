@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import pokemonImg from "../public/assets/proyects/pokemon.png";
+import openvinoImg from "../public/assets/proyects/openvino.png";
 import { RiRadioButtonFill } from "react-icons/ri";
 import { FaAngleLeft } from "react-icons/fa";
 import { Bruno_Ace, Roboto_Mono } from "next/font/google";
@@ -25,7 +25,7 @@ export default function Pokemon() {
           className="absolute z-1"
           layout="fill"
           objectFit="cover"
-          src={pokemonImg}
+          src={openvinoImg}
           alt="pokemon"
         />
         <div className="absolute top-[70%] max-w-[1240px] w-full left-[50%] translate-x-[-50%] translate-y-[-50%] text-white z-10 p-2 px-10">
