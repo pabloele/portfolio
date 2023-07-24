@@ -58,7 +58,6 @@ export default function Navbar(props) {
       } else {
         setShadow(false);
       }
-      console.log(window.scrollY);
     };
     window.addEventListener("scroll", handleShadow);
   }, [router]);

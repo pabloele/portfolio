@@ -39,9 +39,21 @@ export default function Skills() {
     }));
   };
   const getProjectsBySelectedSkills = () => {
-    return data.filter((project) => {
-      return project.skills.some((skill) => selectedSkills[skill]);
+    if (!selectedSkills || typeof selectedSkills !== "object") {
+      return [];
+    }
+
+    const selectedSkillsArray = Object.entries(selectedSkills)
+      .filter(([skill, isSelected]) => isSelected)
+      .map(([skill]) => skill);
+
+    let salida = data.filter((project) => {
+      return selectedSkillsArray.every((skill) =>
+        project.skills.includes(skill)
+      );
     });
+
+    return salida;
   };
   return (
     <div className={"my-10 py-80 min-h-screen" && bruno_ace.className}>
