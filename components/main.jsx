@@ -98,7 +98,11 @@ export default function Main() {
               >
                 <AiOutlineMail />
               </div>
-              <Link href="https://drive.google.com/file/d/1YGjazNqMehhRDzTJpcusghUFs9DfzQiF/view?usp=sharing">
+              <Link
+                href="https://drive.google.com/file/d/1YGjazNqMehhRDzTJpcusghUFs9DfzQiF/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <div
                   className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300"
                   // onClick={handleDownload}

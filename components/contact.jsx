@@ -200,37 +200,43 @@ export default function Contact() {
                   <p className="uppercase pt-8 ">{"Open to Work =)"}</p>
                 </div>
                 <div className="flex items-left justify-between py-4">
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
-                    <Link
-                      href="https://www.linkedin.com/in/pabloelevy/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                  <Link
+                    href="https://www.linkedin.com/in/pabloelevy/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
                       <FaLinkedinIn />
-                    </Link>
-                  </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
-                    <Link
-                      href="https://github.com/pabloele"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    </div>
+                  </Link>
+                  <Link
+                    href="https://github.com/pabloele"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
                       <FaGithub />
-                    </Link>
-                  </div>
+                    </div>
+                  </Link>
                   <div
                     onClick={handleDefaultMail}
                     className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200"
                   >
                     <AiOutlineMail />
                   </div>
-                  <div
-                    onClick={handleDownload}
-                    className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200"
+                  <Link
+                    href="https://drive.google.com/file/d/1YGjazNqMehhRDzTJpcusghUFs9DfzQiF/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    {/* <BsFillPersonLinesFill /> */}
-                    <FiFileText />
-                  </div>
+                    <div
+                      // onClick={handleDownload}
+                      className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200"
+                    >
+                      {/* <BsFillPersonLinesFill /> */}
+                      <FiFileText />
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>
