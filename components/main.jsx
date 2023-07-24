@@ -26,16 +26,16 @@ export default function Main() {
     window.location.href = mailtoUrl;
   };
 
-  const handleDownload = () => {
-    const fileUrl = "Pablo_Levy_Fullstack.pdf";
+  // const handleDownload = () => {
+  //   const fileUrl = "Pablo_Levy_Fullstack.pdf";
 
-    const link = document.createElement("a");
-    link.href = fileUrl;
-    link.download = "Pablo_Levy_FullStack.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  //   const link = document.createElement("a");
+  //   link.href = fileUrl;
+  //   link.download = "Pablo_Levy_FullStack.pdf";
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
   // const router = useRouter();
 
   // useEffect(() => {
@@ -74,36 +74,39 @@ export default function Main() {
               {t("Este es mi Portfolio")}.
             </p>
             <div className="flex items-center justify-between max-w-[330px] m-auto py-4">
-              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                <Link
-                  href="https://www.linkedin.com/in/pabloelevy/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+              <Link
+                href="https://www.linkedin.com/in/pabloelevy/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                   <FaLinkedinIn />
-                </Link>
-              </div>
-              <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
-                <Link
-                  href="https://github.com/pabloele"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                </div>
+              </Link>
+              <Link
+                href="https://github.com/pabloele"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300">
                   <FaGithub />
-                </Link>
-              </div>
+                </div>
+              </Link>
               <div
                 className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300"
                 onClick={handleDefaultMail}
               >
                 <AiOutlineMail />
               </div>
-              <div
-                className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300"
-                onClick={handleDownload}
-              >
-                <FiFileText />
-              </div>
+              <Link href="https://drive.google.com/file/d/1YGjazNqMehhRDzTJpcusghUFs9DfzQiF/view?usp=sharing">
+                <div
+                  className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300"
+                  // onClick={handleDownload}
+                >
+                  <FiFileText />
+                </div>
+              </Link>
+
               {/* CV Pablo Levy - fullstack .pdf */}
             </div>
           </div>

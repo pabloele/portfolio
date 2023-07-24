@@ -58,6 +58,7 @@ export default function Navbar(props) {
       } else {
         setShadow(false);
       }
+      console.log(window.scrollY);
     };
     window.addEventListener("scroll", handleShadow);
   }, [router]);
@@ -167,6 +168,16 @@ export default function Navbar(props) {
                   </li>
                   <li className="py-4 text-sm uppercase hover:border-b">
                     <Link
+                      href="/#proyects"
+                      onClick={() => {
+                        setNav(false);
+                      }}
+                    >
+                      {t("Proyectos")}
+                    </Link>
+                  </li>
+                  <li className="py-4 text-sm uppercase hover:border-b">
+                    <Link
                       className={style.titles}
                       href="/#skills"
                       onClick={() => {
@@ -174,16 +185,6 @@ export default function Navbar(props) {
                       }}
                     >
                       {t("Skills")}
-                    </Link>
-                  </li>
-                  <li className="py-4 text-sm uppercase hover:border-b">
-                    <Link
-                      href="/#proyects"
-                      onClick={() => {
-                        setNav(false);
-                      }}
-                    >
-                      {t("Proyectos")}
                     </Link>
                   </li>
                   <li className="py-4 text-sm uppercase hover:border-b">
@@ -226,12 +227,14 @@ export default function Navbar(props) {
                     >
                       <AiOutlineMail />
                     </div>
-                    <div
-                      className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200"
-                      onClick={handleDownload}
-                    >
-                      <FiFileText />
-                    </div>
+                    <Link href="https://drive.google.com/file/d/1YGjazNqMehhRDzTJpcusghUFs9DfzQiF/view?usp=sharing">
+                      <div
+                        className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200"
+                        // onClick={handleDownload}
+                      >
+                        <FiFileText />
+                      </div>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -262,10 +265,10 @@ export default function Navbar(props) {
                 <Link href="/#about">{t("Abt")}</Link>
               </li>
               <li className="ml-10 text-sm uppercase hover:border-b">
-                <Link href="/#skills">{t("Skills")}</Link>
+                <Link href="/#proyects">{t("Proyectos")}</Link>
               </li>
               <li className="ml-10 text-sm uppercase hover:border-b">
-                <Link href="/#proyects">{t("Proyectos")}</Link>
+                <Link href="/#skills">{t("Skills")}</Link>
               </li>
               <li className="ml-10 text-sm uppercase hover:border-b">
                 <Link href="/#contact" className={style.link}>
