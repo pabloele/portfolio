@@ -110,8 +110,6 @@ export default function Main() {
                   <FiFileText />
                 </div>
               </Link>
-
-              {/* CV Pablo Levy - fullstack .pdf */}
             </div>
           </div>
         </div>

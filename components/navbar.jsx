@@ -118,7 +118,11 @@ export default function Navbar(props) {
           >
             <div className={nav ? "" : "hidden"}>
               <div className="flex w-full items-center justify-between rounded-md cursor-pointer">
-                <h1 className={style.titles}>
+                <h1
+                  className={
+                    navBg === "transparent" ? "text - white" : "text - black"
+                  }
+                >
                   <Link
                     href="/#main"
                     onClick={() => {
@@ -138,14 +142,14 @@ export default function Navbar(props) {
                 </div>
               </div>
               <div className="border-b border-gray-300 my-4">
-                <div className={style.titles}>
+                <div>
                   <p className="w-[85%] md-w-[90%] py-4 uppercase font-extrabold">
                     Fullstack web developer
                   </p>
                 </div>
               </div>
               <div className="py-4 flex flex-col uppercase font-extrabold">
-                <ul className={style.titles}>
+                <ul>
                   <li className="py-4 text-sm uppercase hover:border-b">
                     <Link
                       href="/#main"
@@ -178,7 +182,6 @@ export default function Navbar(props) {
                   </li>
                   <li className="py-4 text-sm uppercase hover:border-b">
                     <Link
-                      className={style.titles}
                       href="/#skills"
                       onClick={() => {
                         setNav(false);
@@ -245,22 +248,42 @@ export default function Navbar(props) {
             </div>
           </div>
         </div>
+        {/* {"large screens"} */}
         <div className="flex justify-between items-center w-full h-full px-2 2xl:px-16 ">
           <div className={bruno_ace.className}>
-            <h1 className=" py-10 font-extrabold text-[1.5rem] md:text-[1.5] lg:text-[2rem] cursor-pointer italic">
+            <div className=" py-10 font-extrabold text-[1.5rem] md:text-[1.5] lg:text-[2rem] cursor-pointer italic">
               <Link href="/#main">
-                <p className=" ">
-                  {" <Pablo Levy"} <span className="text-[#5651e5]">/</span>
+                <span
+                  className={
+                    navBg === "transparent"
+                      ? "text-white opacity-60"
+                      : "text-black"
+                  }
+                >
+                  {" <Pablo Levy"}
+                </span>{" "}
+                <span className="text-[#5651e5]">/</span>
+                <span
+                  className={
+                    navBg === "transparent"
+                      ? "text-white opacity-60"
+                      : "text-black"
+                  }
+                >
                   {">"}
-                </p>
+                </span>
               </Link>
-            </h1>
+            </div>
           </div>
 
           <div className="flex-grow font-extrabold">
             <ul
               style={{ color: `${linkColor}` }}
-              className="ld:flex justify-end px-7  md:flex hidden "
+              className={
+                navBg === "transparent"
+                  ? "text-white opacity-60 ld:flex justify-end px-7  md:flex hidden"
+                  : "text-black ld:flex justify-end px-7  md:flex hidden"
+              }
             >
               <li className="ml-10 text-sm uppercase hover:border-b scroll-smooth">
                 <Link href="/#main">{t("Inicio")}</Link>
@@ -287,7 +310,12 @@ export default function Navbar(props) {
           </div>
           <div>
             <button
-              className="opacity-70 text-black font-extrabold"
+              className={
+                "opacity-70 text-black font-extrabold" &&
+                navBg === "transparent"
+                  ? "text-white opacity-50"
+                  : "text-black"
+              }
               onClick={toggleLanguage}
             >
               {lang}
