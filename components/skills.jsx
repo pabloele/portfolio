@@ -32,7 +32,9 @@ export default function Skills() {
     firebase: false,
     firestore: false,
   });
+  const [clicked, setClicked] = useState(false);
   const handleSkillSelection = (skill) => {
+    setClicked(true);
     setSelectedSkills((prevSkills) => ({
       ...prevSkills,
       [skill]: !prevSkills[skill],
@@ -46,7 +48,10 @@ export default function Skills() {
     const selectedSkillsArray = Object.entries(selectedSkills)
       .filter(([skill, isSelected]) => isSelected)
       .map(([skill]) => skill);
-
+    if (selectedSkillsArray.length === 0) {
+      // Si no hay tecnologías seleccionadas, devolver un array vacío
+      return [];
+    }
     let salida = data.filter((project) => {
       return selectedSkillsArray.every((skill) =>
         project.skills.includes(skill)
@@ -69,7 +74,7 @@ export default function Skills() {
           </h2>
           {/* <h2>Qué puedo hacer</h2> */}
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             <div
               className={
                 selectedSkills.html
@@ -78,13 +83,13 @@ export default function Skills() {
               }
               onClick={() => handleSkillSelection("html")}
             >
-              <div className="grid grid-cols-2 gap-4 justify-center items-center">
+              <div className="grid grid-cols-1 gap-4 justify-center items-center">
                 <div className="m-auto">
                   <Image
                     src="/assets/skills/html.png"
                     alt="html"
-                    width="64"
-                    height="64"
+                    width="40"
+                    height="40"
                   />
                 </div>
                 <div className="flex flex-col items-center justify-center">
@@ -99,13 +104,13 @@ export default function Skills() {
                   : "p-6 shadow-xl hover:scale-105 ease-in duration-300 "
               }
             >
-              <div className="grid grid-cols-2 gap-4 justify-center items-center">
+              <div className="grid grid-cols-1 gap-4 justify-center items-center">
                 <div className="m-auto">
                   <Image
                     src="/assets/skills/github1.png"
                     alt="html"
-                    width="64"
-                    height="64"
+                    width="40"
+                    height="40"
                   />
                 </div>
                 <div className="flex flex-col items-center justify-center">
@@ -121,13 +126,13 @@ export default function Skills() {
               }
               onClick={() => handleSkillSelection("css")}
             >
-              <div className="grid grid-cols-2 gap-4 justify-center items-center">
+              <div className="grid grid-cols-1 gap-4 justify-center items-center">
                 <div className="m-auto">
                   <Image
                     src="/assets/skills/css.png"
                     alt="html"
-                    width="64"
-                    height="64"
+                    width="40"
+                    height="40"
                   />
                 </div>
                 <div className="flex flex-col items-center justify-center">
@@ -143,13 +148,13 @@ export default function Skills() {
               }
               onClick={() => handleSkillSelection("javascript")}
             >
-              <div className="grid grid-cols-2 gap-4 justify-center items-center">
+              <div className="grid grid-cols-1 gap-4 justify-center items-center">
                 <div className="m-auto">
                   <Image
                     src="/assets/skills/javascript.png"
                     alt="html"
-                    width="64"
-                    height="64"
+                    width="40"
+                    height="40"
                   />
                 </div>
                 <div className="flex flex-col items-center justify-center">
@@ -165,13 +170,13 @@ export default function Skills() {
               }
               onClick={() => handleSkillSelection("react")}
             >
-              <div className="grid grid-cols-2 gap-4 justify-center items-center">
+              <div className="grid grid-cols-1 gap-4 justify-center items-center">
                 <div className="m-auto">
                   <Image
                     src="/assets/skills/react.png"
                     alt="html"
-                    width="64"
-                    height="64"
+                    width="40"
+                    height="40"
                   />
                 </div>
                 <div className="flex flex-col items-center justify-center">
@@ -187,13 +192,13 @@ export default function Skills() {
               }
               onClick={() => handleSkillSelection("next")}
             >
-              <div className="grid grid-cols-2 gap-4 justify-center items-center">
+              <div className="grid grid-cols-1 gap-4 justify-center items-center">
                 <div className="m-auto">
                   <Image
                     src="/assets/skills/nextjs.png"
                     alt="html"
-                    width="64"
-                    height="64"
+                    width="40"
+                    height="40"
                   />
                 </div>
                 <div className="flex flex-col items-center justify-center">
@@ -209,13 +214,13 @@ export default function Skills() {
               }
               onClick={() => handleSkillSelection("tailwind")}
             >
-              <div className="grid grid-cols-2 gap-4 justify-center items-center">
+              <div className="grid grid-cols-1 gap-4 justify-center items-center">
                 <div className="m-auto">
                   <Image
                     src="/assets/skills/tailwind.png"
                     alt="html"
-                    width="64"
-                    height="64"
+                    width="40"
+                    height="40"
                   />
                 </div>
                 <div className="flex flex-col items-center justify-center">
@@ -231,13 +236,13 @@ export default function Skills() {
               }
               onClick={() => handleSkillSelection("node")}
             >
-              <div className="grid grid-cols-2 gap-4 justify-center items-center">
+              <div className="grid grid-cols-1 gap-4 justify-center items-center">
                 <div className="m-auto">
                   <Image
                     src="/assets/skills/node.png"
                     alt="html"
-                    width="64"
-                    height="64"
+                    width="40"
+                    height="40"
                   />
                 </div>
                 <div className="flex flex-col items-center justify-center">
@@ -253,13 +258,13 @@ export default function Skills() {
               }
               onClick={() => handleSkillSelection("firebase")}
             >
-              <div className="grid grid-cols-2 gap-4 justify-center items-center">
+              <div className="grid grid-cols-1 gap-4 justify-center items-center">
                 <div className="m-auto">
                   <Image
                     src="/assets/skills/firebase.png"
                     alt="html"
-                    width="64"
-                    height="64"
+                    width="40"
+                    height="40"
                   />
                 </div>
                 <div className="flex flex-col items-center justify-center">
@@ -275,13 +280,13 @@ export default function Skills() {
               }
               onClick={() => handleSkillSelection("firestore")}
             >
-              <div className="grid grid-cols-2 gap-4 justify-center items-center">
+              <div className="grid grid-cols-1 gap-4 justify-center items-center">
                 <div className="m-auto">
                   <Image
                     src="/assets/skills/firebase.png"
                     alt="html"
-                    width="64"
-                    height="64"
+                    width="40"
+                    height="40"
                   />
                 </div>
                 <div className="flex flex-col items-center justify-center">
@@ -297,13 +302,13 @@ export default function Skills() {
               }
               onClick={() => handleSkillSelection("docker")}
             >
-              <div className="grid grid-cols-2 gap-4 justify-center items-center">
+              <div className="grid grid-cols-1 gap-4 justify-center items-center">
                 <div className="m-auto">
                   <Image
                     src="/assets/skills/docker.png"
                     alt="html"
-                    width="64"
-                    height="64"
+                    width="40"
+                    height="40"
                   />
                 </div>
                 <div className="flex flex-col items-center justify-center">
@@ -319,35 +324,48 @@ export default function Skills() {
               }
               onClick={() => handleSkillSelection("mongo")}
             >
-              <div className="grid grid-cols-2 gap-4 justify-center items-center">
+              <div className="grid grid-cols-1 gap-4 justify-center items-center">
                 <div className="m-auto">
                   <Image
                     src="/assets/skills/mongo.png"
                     alt="html"
-                    width="64"
-                    height="64"
+                    width="40"
+                    height="40"
                   />
                 </div>
                 <div className="flex flex-col items-center justify-center">
-                  <h3>MONGO DB</h3>
+                  <h3>MongoDB</h3>
                 </div>
               </div>
             </div>
           </div>
 
-          <br />
-          {getProjectsBySelectedSkills().length > 0 && (
+          {getProjectsBySelectedSkills().length > 0 ? (
             <div>
-              <h4 className="text-slate-600">
+              <h4 className="text-slate-600 mx-4">
                 Hay {getProjectsBySelectedSkills().length} proyectos con las
                 tecnologías seleccionadas!
               </h4>
-              {getProjectsBySelectedSkills().map((project, index) => (
-                <Link href={project.path} key={index}>
-                  <span style={{ marginRight: "20px" }}>{project.name}</span>
-                </Link>
-              ))}
+              <div className="flex flex-wrap justify-items-start space-x-[1rem]">
+                <span> </span>
+                {getProjectsBySelectedSkills().map((project, index) => (
+                  <Link href={project.path} key={index}>
+                    <span className="flex ">{project.name}</span>
+                  </Link>
+                ))}
+              </div>
             </div>
+          ) : (
+            clicked && (
+              <h4
+                className="text-slate-600 mx-4 cursor-pointer"
+                onClick={() => {
+                  setClicked(false);
+                }}
+              >
+                No hay proyectos con las tecnologías seleccionadas.
+              </h4>
+            )
           )}
         </div>
       </div>
