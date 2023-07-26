@@ -11,6 +11,7 @@ export const data = [
       "express",
       "node",
       "javascript",
+      "firebase",
     ],
     path: "/mecanu",
   },

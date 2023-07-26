@@ -60,6 +60,7 @@ export default function Navbar({ lang, setLang }) {
     };
     window.addEventListener("scroll", handleShadow);
   }, [router]);
+
   const handleDefaultMail = () => {
     const email = "pabloelevy@gmail.com";
     const subject = "";
