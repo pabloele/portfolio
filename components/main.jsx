@@ -63,13 +63,14 @@ export default function Main() {
       <div id="main" className="w-full h-screen text-center font-extrabold">
         <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
           <div>
+            <p className="uppercase text-sm tracking-widest text-gray-600">
+              {t("Soy un desarrollador web full stack")}
+            </p>
             <h1 className="py-4 text-gray-700 ">
               {t("Hola! Soy")}
               <span className="text-[#5651e5]"> Pablo.</span>
             </h1>
-            <p className="uppercase text-sm tracking-widest text-gray-600">
-              {t("Soy un desarrollador web full stack")}.
-            </p>
+
             <p className="uppercase text-sm tracking-widest text-gray-600 font">
               {t("Este es mi Portfolio")}.
             </p>
