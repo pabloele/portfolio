@@ -164,11 +164,11 @@ export default function Contact() {
     }
   };
   const inputRef = useRef(null);
-  useEffect(() => {
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (inputRef.current) {
+  //     inputRef.current.focus();
+  //   }
+  // }, []);
   return (
     <div
       id="contact"

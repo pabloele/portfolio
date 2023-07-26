@@ -8,7 +8,7 @@ const bruno_ace = Bruno_Ace({
   weight: "400",
 });
 
-const montserrat = Montserrat({
+const montserrat = Roboto_Mono({
   subsets: [],
   weight: "400",
 });
@@ -43,9 +43,7 @@ export default function About() {
             </h2>
             {/* <h2>Quién soy</h2> */}
             {/* <p className="py-5 text-lg">
-            {
-              "¡Bienvenido@! Soy un desarrollador web full stack con pasión por crear aplicaciones innovadoras que resuelvan problemas reales. En esta página podrás navegar por mis proyectos y mis redes. Si te gusta lo que ves, ¡contactame y trabajemos juntos! =)"
-            }
+        
           </p> */}
             <div>
               <p

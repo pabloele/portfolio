@@ -14,18 +14,17 @@ const bruno_ace = Bruno_Ace({
   weight: "400",
 });
 
-export default function Navbar(props) {
+export default function Navbar({ lang, setLang }) {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
   const [navBg, setNavbg] = useState("#ecf0f3");
   const [linkColor, setLinkColor] = useState("#1f2937");
+
   const router = useRouter();
   const handleNav = () => {
     setNav(!nav);
   };
   const { t, i18n } = useTranslation();
-
-  const [lang, setLang] = useState("es");
 
   const toggleLanguage = () => {
     if (lang === "en") {
@@ -93,6 +92,7 @@ export default function Navbar(props) {
       console.log("locale", locale);
     }
   };
+
   return (
     <div className={bruno_ace.className}>
       <div
