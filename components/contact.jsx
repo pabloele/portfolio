@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 import { FiFileText } from "react-icons/fi";
 import { Bruno_Ace, Roboto_Mono, Montserrat } from "next/font/google";
 import { useTranslation } from "react-i18next";
-
+import { esCv, enCv } from "@/cvData/cvData";
 const Bruno_ace = Bruno_Ace({
   subsets: [],
   weight: "400",
@@ -23,7 +23,7 @@ const font2 = Montserrat({
 });
 
 export default function Contact() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const router = useRouter();
   const form = useRef();
 
@@ -148,27 +148,13 @@ export default function Contact() {
     window.location.href = mailtoUrl;
   };
 
-  const handleDownload = () => {
-    const fileUrl = "Pablo_Levy_Fullstack.pdf";
-
-    const link = document.createElement("a");
-    link.href = fileUrl;
-    link.download = "Pablo_Levy_FullStack.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
   const handleParagraphClick = () => {
     if (inputRef.current) {
       inputRef.current.focus();
     }
   };
   const inputRef = useRef(null);
-  // useEffect(() => {
-  //   if (inputRef.current) {
-  //     inputRef.current.focus();
-  //   }
-  // }, []);
+
   return (
     <div
       id="contact"
@@ -243,7 +229,7 @@ export default function Contact() {
                     <AiOutlineMail />
                   </div>
                   <Link
-                    href="https://drive.google.com/file/d/1EaASoo8zDjppsFA8dX8xKyIzyAe73XyL/view?usp=sharing"
+                    href={i18n.language === "es" ? esCv : enCv}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

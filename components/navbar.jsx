@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import { Bruno_Ace } from "next/font/google";
 import { FiFileText } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
+import { esCv, enCv } from "@/cvData/cvData";
 const bruno_ace = Bruno_Ace({
   subsets: [],
   weight: "400",
@@ -82,16 +83,6 @@ export default function Navbar({ lang, setLang }) {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  };
-  const { locale, locales, push } = useRouter();
-  const handleClick = () => {
-    if (locale === "es") {
-      push("/", undefined, { locale: "en" });
-      console.log("locale", locale);
-    } else {
-      push("/", undefined, { locale: "es" });
-      console.log("locale", locale);
-    }
   };
 
   return (
@@ -231,7 +222,7 @@ export default function Navbar({ lang, setLang }) {
                       <AiOutlineMail />
                     </div>
                     <Link
-                      href="https://drive.google.com/file/d/1EaASoo8zDjppsFA8dX8xKyIzyAe73XyL/view?usp=sharing"
+                      href={lang === "es" ? esCv : enCv}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
