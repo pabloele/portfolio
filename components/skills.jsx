@@ -32,6 +32,14 @@ export default function Skills() {
     firebase: false,
     firestore: false,
   });
+  const [hasSelected, setHasSelected] = useState(false);
+  const hasSelectedSkills = () => {
+    const salida = Object.values(selectedSkills).some(
+      (skill) => skill === true
+    );
+    console.log("salida", salida);
+    return salida;
+  };
   const [clicked, setClicked] = useState(false);
   const handleSkillSelection = (skill) => {
     setClicked(true);
@@ -39,6 +47,8 @@ export default function Skills() {
       ...prevSkills,
       [skill]: !prevSkills[skill],
     }));
+    const has = hasSelectedSkills();
+    console.log(has);
   };
   const getProjectsBySelectedSkills = () => {
     if (!selectedSkills || typeof selectedSkills !== "object") {
@@ -60,6 +70,7 @@ export default function Skills() {
 
     return salida;
   };
+
   return (
     <div className={"my-10 py-80 min-h-screen" && bruno_ace.className}>
       <div
@@ -340,33 +351,37 @@ export default function Skills() {
             </div>
           </div>
 
-          {getProjectsBySelectedSkills().length > 0 ? (
-            <div>
-              <h4 className="text-slate-600 mx-4">
-                Hay {getProjectsBySelectedSkills().length} proyectos con las
-                tecnologías seleccionadas!
-              </h4>
-              <div className="flex flex-wrap justify-items-start space-x-[1rem]">
-                <span> </span>
-                {getProjectsBySelectedSkills().map((project, index) => (
-                  <Link href={project.path} key={index}>
-                    <span className="flex ">{project.name}</span>
-                  </Link>
-                ))}
+          {
+            getProjectsBySelectedSkills().length > 0 ? (
+              <div>
+                <h4 className="text-slate-600 mx-4">
+                  Hay {getProjectsBySelectedSkills().length} proyectos con las
+                  tecnologías seleccionadas!
+                </h4>
+                <div className="flex flex-wrap justify-items-start space-x-[1rem]">
+                  <span> </span>
+                  {getProjectsBySelectedSkills().map((project, index) => (
+                    <Link href={project.path} key={index}>
+                      <span className="flex ">{project.name}</span>
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
-          ) : (
-            clicked && (
-              <h4
-                className="text-slate-600 mx-4 cursor-pointer"
-                onClick={() => {
-                  setClicked(false);
-                }}
-              >
-                No hay proyectos con las tecnologías seleccionadas.
-              </h4>
-            )
-          )}
+            ) : null
+
+            // (
+            // clicked && (
+            //   <h4
+            //     className="text-slate-600 mx-4 cursor-pointer"
+            //     onClick={() => {
+            //       setClicked(false);
+            //     }}
+            //   >
+            //     No hay proyectos con las tecnologías seleccionadas.
+            //   </h4>
+            // )
+            // )
+          }
         </div>
       </div>
       <br />
