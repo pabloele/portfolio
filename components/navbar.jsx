@@ -230,7 +230,7 @@ export default function Navbar(props) {
                       <AiOutlineMail />
                     </div>
                     <Link
-                      href="https://drive.google.com/file/d/1YGjazNqMehhRDzTJpcusghUFs9DfzQiF/view?usp=sharing"
+                      href="https://drive.google.com/file/d/173Dp4tFW3P9lh1bYteE6yM7o7V1FMjWt/view?usp=sharing"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
