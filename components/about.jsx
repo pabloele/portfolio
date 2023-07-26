@@ -2,13 +2,13 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { Bruno_Ace, Roboto_Mono } from "next/font/google";
+import { Bruno_Ace, Roboto_Mono, Montserrat } from "next/font/google";
 const bruno_ace = Bruno_Ace({
   subsets: [],
   weight: "400",
 });
 
-const montserrat = Roboto_Mono({
+const montserrat = Montserrat({
   subsets: [],
   weight: "400",
 });

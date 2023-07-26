@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import Link from "next/link";
 import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
@@ -9,7 +9,7 @@ import { useState } from "react";
 import emailjs from "emailjs-com";
 import { useRouter } from "next/router";
 import { FiFileText } from "react-icons/fi";
-import { Bruno_Ace, Roboto_Mono } from "next/font/google";
+import { Bruno_Ace, Roboto_Mono, Montserrat } from "next/font/google";
 import { useTranslation } from "react-i18next";
 
 const Bruno_ace = Bruno_Ace({
@@ -17,7 +17,7 @@ const Bruno_ace = Bruno_Ace({
   weight: "400",
 });
 
-const font2 = Roboto_Mono({
+const font2 = Montserrat({
   subsets: [],
   weight: "400",
 });
@@ -158,7 +158,17 @@ export default function Contact() {
     link.click();
     document.body.removeChild(link);
   };
-
+  const handleParagraphClick = () => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  };
+  const inputRef = useRef(null);
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
   return (
     <div
       id="contact"
@@ -192,14 +202,21 @@ export default function Contact() {
                   className="rounded-xl hover:scale-105 ease-in duration-300 "
                 />
               </div>
-              <div >
-                <h2 className="py-6 ">Pablo Levy</h2>
-                <p>Full Stack Developer</p>
+              <div>
+                <h2 className="pt-6 text-center">Pablo Levy</h2>
+                <p className="text-center">Full Stack Developer</p>
                 <p className="py-4"> </p>
                 <div className={`${font2.className} `}>
-  <p className="uppercase text-[1.2rem] pt-4 font-extrabold">{t("callToAction")}</p>
-  {/* <p className="uppercase font-extrabold">{t("callToAction2")}</p> */}
-</div>
+                  <p className="uppercase text-[1rem] text-center pt-4 font-bold">
+                    🚀{t("callToAction")}🚀
+                  </p>
+                  <p
+                    className={`uppercase text-[1.5rem] text-center cursor-pointer ${Bruno_ace.className}`}
+                    onClick={handleParagraphClick}
+                  >
+                    {t("callToAction2")}
+                  </p>
+                </div>
                 <div className="flex items-left justify-between py-4">
                   <Link
                     href="https://www.linkedin.com/in/pabloelevy/"
@@ -251,6 +268,7 @@ export default function Contact() {
                     {t("Nombre")}
                   </label>
                   <input
+                    ref={inputRef}
                     className={
                       errors.user_name === "invalid"
                         ? "border-2 rounded-lg p-3 flex border-red-300"

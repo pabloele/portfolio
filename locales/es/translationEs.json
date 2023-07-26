@@ -24,7 +24,7 @@
     "pokemonDescription": "Aplicación desarrollada como proyecto individual durante el bootcamp de Henry. La app permite a los usuarios ver tarjetas de Pokémon obtenidas de una API externa. Fueron implementadas las funcionalidades de paginación, ordenamiento, filtros combinados y CRUD completo. Backend realizado en Node.js y Express, con PostgreSQL y Sequelize como base de datos y ORM.",
     "portfolioDescription": "Portfolio full responsive realizado en Next Js y Tailwind",
     "openvinoDescription": "La aplicación consiste en un dashboard para las bodegas, que permite administrar los redeems (canjes) de tokens, y una vista de administrador para gestionar la información de todas las bodegas desde un perfil de superusuario. Cuenta además con autenticación con Metamask, desarrollo de un microservicio en express que para manejar las notificciones provinientes de otro servicio de Openvino, conectado al dashboard mediante web socket.",
-    "callToAction": "Tu proyecto comienza hoy. ¡Conecta!",
-    "callToAction2": ""
+    "callToAction": "Tu proyecto comienza hoy",
+    "callToAction2": "¡Conecta!"
 
 }
