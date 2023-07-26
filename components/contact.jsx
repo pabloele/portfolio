@@ -192,13 +192,14 @@ export default function Contact() {
                   className="rounded-xl hover:scale-105 ease-in duration-300 "
                 />
               </div>
-              <div>
-                <h2 className="py-2 ">Pablo Levy</h2>
+              <div >
+                <h2 className="py-6 ">Pablo Levy</h2>
                 <p>Full Stack Developer</p>
                 <p className="py-4"> </p>
-                <div>
-                  <p className="uppercase pt-8 ">{"Open to Work =)"}</p>
-                </div>
+                <div className={`${font2.className} `}>
+  <p className="uppercase text-[1.2rem] pt-4 font-extrabold">{t("callToAction")}</p>
+  {/* <p className="uppercase font-extrabold">{t("callToAction2")}</p> */}
+</div>
                 <div className="flex items-left justify-between py-4">
                   <Link
                     href="https://www.linkedin.com/in/pabloelevy/"
