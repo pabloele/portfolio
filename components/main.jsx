@@ -68,7 +68,7 @@ export default function Main() {
               <span className="text-[#5651e5]"> Pablo.</span>
             </h1>
             <p className="uppercase text-sm tracking-widest text-gray-600">
-              {t("Full Stack Web Developer")}.
+              {t("Soy un desarrollador web full stack")}.
             </p>
             <p className="uppercase text-sm tracking-widest text-gray-600 font">
               {t("Este es mi Portfolio")}.

@@ -13,7 +13,7 @@
   "Mensaje": "Message",
   "Subject": "Subject",
   "Hola! Soy": "Hi! i'm",
-  "Soy un desarrollador web full stack": "I'm a Fullstack Web Developer",
+  "Soy un desarrollador web full stack": "Fullstack Web Developer",
   "Este es mi Portfolio": "This is my portfolio",
   "mecanuDescription": "Internship working on the web app for this innovative Chilean startup that provides home mechanic services. The application allows users to register, select services for their vehicles, and receive an instant quote. As a 'full-stack' developer, I played a dynamic role, participating in both the front-end and back-end, using agile methodologies and technologies such as Next.js, Tailwind, Express, Postgresql, Sequelize, Firebase, Mercado Pago, and Sendgrid. I also implemented the Progressive Web App (PWA) functionality.",
   "Tecnologias": "Technologies",
