@@ -10,6 +10,8 @@ import { Bruno_Ace } from "next/font/google";
 import { FiFileText } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
 import { esCv, enCv } from "@/cvData/cvData";
+
+import { CiLight, CiDark } from "react-icons/ci";
 const bruno_ace = Bruno_Ace({
   subsets: [],
   weight: "400",
@@ -72,17 +74,6 @@ export default function Navbar({ lang, setLang }) {
     )}&body=${encodeURIComponent(body)}`;
 
     window.location.href = mailtoUrl;
-  };
-
-  const handleDownload = () => {
-    const fileUrl = "Pablo_Levy_Fullstack.pdf";
-
-    const link = document.createElement("a");
-    link.href = fileUrl;
-    link.download = "Pablo_Levy_FullStack.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
   };
 
   return (
@@ -311,6 +302,7 @@ export default function Navbar({ lang, setLang }) {
             >
               {lang}
             </button>
+            <CiDark />
           </div>
         </div>
       </div>
