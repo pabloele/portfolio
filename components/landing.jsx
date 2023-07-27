@@ -7,7 +7,8 @@ const bruno_ace = Bruno_Ace({
 });
 import { useTranslation } from "react-i18next";
 
-const Landing = ({ setLanding, setLang }) => {
+const Landing = ({store}) => {
+  const { setLanding, setLang } = store;
   const { i18n } = useTranslation();
   return (
     <div

@@ -12,7 +12,9 @@ const montserrat = Roboto_Mono({
   subsets: [],
   weight: "400",
 });
-export default function About() {
+export default function About({store}) {
+  const {setToContact} = store;
+
   const { t } = useTranslation();
   return (
     <div className={"min-h-screen" && bruno_ace.className}>
@@ -50,7 +52,7 @@ export default function About() {
                 className={"py-5 text-xl font-semibold" && montserrat.className}
               >
                 {t("description")}
-                <Link href="/#contact" className="text-[#5651e5] font-bold">
+                <Link href="/#contact" className="text-[#5651e5] font-bold" onClick={()=>{setToContact(true)}}>
                   {" "}
                   {t("Conecta")}!!{" "}
                 </Link>

@@ -22,7 +22,8 @@ const font2 = Montserrat({
   weight: "400",
 });
 
-export default function Contact() {
+export default function Contact({store}) {
+  const {toContact, setToContact} = store;
   const { t, i18n } = useTranslation();
   const router = useRouter();
   const form = useRef();
@@ -154,6 +155,13 @@ export default function Contact() {
     }
   };
   const inputRef = useRef(null);
+
+  useEffect(()=>{
+    if (inputRef.current && toContact) {
+      inputRef.current.focus();
+    }
+    setToContact(false)
+  },[toContact])
 
   return (
     <div

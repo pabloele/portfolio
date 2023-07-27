@@ -8,16 +8,26 @@ import React from "react";
 export default function App({ Component, pageProps }) {
   const [landing, setLanding] = useState(true);
   const [lang, setLang] = useState("es");
+  const [toContact, setToContact] = useState(false);
+  const store = {
+    lang,
+    setLang,
+    landing,
+    setLanding,
+    toContact,
+    setToContact,
+  }
   return (
     <I18nextProvider i18n={i18n}>
-      {landing ? (
-        <Landing setLanding={setLanding} setLang={setLang} />
-      ) : (
-        <React.Fragment>
-          <Navbar lang={lang} setLang={setLang} />
-          <Component {...pageProps} />
-        </React.Fragment>
-      )}
-    </I18nextProvider>
+    {landing ? (
+      <Landing store={store} />
+    ) : (
+      <React.Fragment>
+        <Navbar lang={lang} setLang={setLang} setToContact={setToContact} store={store}/>
+        
+        <Component {...pageProps} store={store} />
+      </React.Fragment>
+    )}
+  </I18nextProvider>
   );
 }

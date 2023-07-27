@@ -15,7 +15,8 @@ const bruno_ace = Bruno_Ace({
   weight: "400",
 });
 
-export default function Navbar({ lang, setLang }) {
+export default function Navbar({store}) {
+  const { lang, setLang, setToContact } = store;
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
   const [navBg, setNavbg] = useState("#ecf0f3");
@@ -74,16 +75,7 @@ export default function Navbar({ lang, setLang }) {
     window.location.href = mailtoUrl;
   };
 
-  const handleDownload = () => {
-    const fileUrl = "Pablo_Levy_Fullstack.pdf";
-
-    const link = document.createElement("a");
-    link.href = fileUrl;
-    link.download = "Pablo_Levy_FullStack.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+ 
 
   return (
     <div className={bruno_ace.className}>
@@ -107,6 +99,7 @@ export default function Navbar({ lang, setLang }) {
                 : "fixed left-[100-%] top-0 p-10 ease-in duration-500 "
             }
           >
+        {/*"small screens"*/}
             <div className={nav ? "" : "hidden"}>
               <div className="flex w-full items-center justify-between rounded-md cursor-pointer">
                 <h1
@@ -146,6 +139,7 @@ export default function Navbar({ lang, setLang }) {
                       href="/#main"
                       onClick={() => {
                         setNav(false);
+                        
                       }}
                     >
                       {"Home"}
@@ -181,11 +175,12 @@ export default function Navbar({ lang, setLang }) {
                       {t("Skills")}
                     </Link>
                   </li>
-                  <li className="py-4 text-sm uppercase hover:border-b">
+                  <li className="py-4 text-sm uppercase hover:border-b" >
                     <Link
                       href="/#contact"
                       onClick={() => {
                         setNav(false);
+                        setToContact(true);
                       }}
                     >
                       {t("Contacto")}
@@ -288,8 +283,8 @@ export default function Navbar({ lang, setLang }) {
               <li className="ml-10 text-sm uppercase hover:border-b">
                 <Link href="/#skills">{t("Skills")}</Link>
               </li>
-              <li className="ml-10 text-sm uppercase hover:border-b">
-                <Link href="/#contact" className={style.link}>
+              <li className="ml-10 text-sm uppercase hover:border-b " onClick={()=>{setToContact(true)}}>
+                <Link href="/#contact" className={style.link} >
                   {t("Contacto")}
                 </Link>
               </li>
