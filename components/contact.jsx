@@ -22,12 +22,12 @@ const font2 = Montserrat({
   weight: "400",
 });
 
-export default function Contact({store}) {
-  const {toContact, setToContact} = store;
+export default function Contact({ store }) {
+  const { toContact, setToContact } = store;
   const { t, i18n } = useTranslation();
   const router = useRouter();
   const form = useRef();
-
+  const [showSended, setShowSended] = useState();
   const sendEmail = (e, mail_service, mail_template, mail_key) => {
     e.preventDefault();
 
@@ -59,7 +59,11 @@ export default function Contact({store}) {
               subject: "",
               message: "",
             });
-            router.push("/#main");
+            setShowSended(true);
+            setTimeout(() => {
+              setShowSended(false);
+              router.push("/#main");
+            }, [500]);
           },
           (error) => {
             console.log(error.text);
@@ -156,12 +160,12 @@ export default function Contact({store}) {
   };
   const inputRef = useRef(null);
 
-  useEffect(()=>{
+  useEffect(() => {
     if (inputRef.current && toContact) {
       inputRef.current.focus();
     }
-    setToContact(false)
-  },[toContact])
+    setToContact(false);
+  }, [toContact]);
 
   return (
     <div
@@ -340,6 +344,9 @@ export default function Contact({store}) {
                   {t("Enviar Mensaje")}
                 </button>
               </form>
+              {showSended && (
+                <p className={font2.className}>✅{t("enviado")}</p>
+              )}
             </div>
           </div>
         </div>

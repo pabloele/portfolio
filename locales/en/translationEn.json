@@ -24,5 +24,6 @@
   "portfolioDescription": "Portfolio fully responsive made using Next.js and Tailwind",
   "openvinoDescription": "This application is a dashboard that allows the management of token redeems for wineries in the Openvino project. It also includes an admin view to handle information for all wineries and redeems as a superuser, as well as a microservice that listens for changes in the redeem database and handles notifications via web socket in the main app.",
   "callToAction": "Your project begins TODAY",
-  "callToAction2": "Connect!"
+  "callToAction2": "Connect!",
+  "enviado":"Mesage sent"
 }
