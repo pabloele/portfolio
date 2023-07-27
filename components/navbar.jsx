@@ -23,8 +23,9 @@ export default function Navbar({store}) {
   const [linkColor, setLinkColor] = useState("#1f2937");
 
   const router = useRouter();
-  const handleNav = () => {
+  const handleNav = (e) => {
     setNav(!nav);
+    e.stopPropagation();
   };
   const { t, i18n } = useTranslation();
 
@@ -78,7 +79,7 @@ export default function Navbar({store}) {
  
 
   return (
-    <div className={bruno_ace.className}>
+    <div className={bruno_ace.className} onClick={()=>{setNav(false)}}>
       <div
         style={{ backgroundColor: `${navBg}` }}
         className={
@@ -118,12 +119,12 @@ export default function Navbar({store}) {
                   </Link>
                 </h1>
 
-                <div
+                {/* <div
                   className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer"
                   onClick={handleNav}
                 >
                   <AiOutlineClose />
-                </div>
+                </div> */}
               </div>
               <div className="border-b border-gray-300 my-4">
                 <div>
