@@ -43,7 +43,7 @@ export default function Pokemon() {
           <br />
           <h2>{t("Overview")}</h2>
           <p>{t("openvinoDescription")}</p>
-          <button className="px-8 py-2 mt-4 mr-8">
+          <button className="px-8 py-2 mt-4 mr-4">
             <Link
               href="https://www.youtube.com/watch?v=5vNg5u-CbW4"
               target="_blank"
@@ -51,12 +51,20 @@ export default function Pokemon() {
               Video
             </Link>
           </button>
-          <button className="px-8 py-2 mt-4">
+          <button className="px-8 py-2 mt-4 mr-4">
             <Link
               href="https://github.com/openvino/redeem_dashboard"
               target="_blank"
             >
               Code
+            </Link>
+          </button>
+          <button className="px-8 py-2 mt-4">
+            <Link
+              href="https://openvino.atlassian.net/wiki/spaces/OPENVINO/pages/284622882/Winery+Dashboard"
+              target="_blank"
+            >
+              Wiki
             </Link>
           </button>
         </div>
