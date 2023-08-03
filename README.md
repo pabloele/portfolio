@@ -1,2 +1,2 @@
 # Welcome to my Portfolio!
-# App created with Next JS and TailwindCSS
+## App created with Next JS and TailwindCSS
