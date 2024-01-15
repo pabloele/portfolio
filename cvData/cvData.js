@@ -1,4 +1,4 @@
 export const esCv =
-  "https://drive.google.com/file/d/1EaASoo8zDjppsFA8dX8xKyIzyAe73XyL/view?usp=sharing";
+  "https://drive.google.com/file/d/1yvmL-nxoCfRzLTUSy2VKLXxkz374uZYe/view?usp=sharing";
 export const enCv =
-  "https://drive.google.com/file/d/17zgjX3fWJRIov4Dm7V97GPh_7ZQPtbpW/view?usp=drive_link";
+  "https://drive.google.com/file/d/1bWap6Q1Hv0OihEAsq-MQ4PoKgmK6OiWx/view?usp=sharing";
