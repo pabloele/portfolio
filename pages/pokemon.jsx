@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import pokemonImg from "../public/assets/proyects/pokemon.png";
+import pokemonImg from "../public/assets/projects/pokemon.png";
 import { RiRadioButtonFill } from "react-icons/ri";
 export default function pokemon() {
   return (
@@ -76,7 +76,7 @@ export default function pokemon() {
             </div>
           </div>
         </div>
-        <Link href="/#proyects">
+        <Link href="/#projects">
           <p className="underline cursor-pointer">Volver</p>
         </Link>
       </div>

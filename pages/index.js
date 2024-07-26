@@ -5,9 +5,10 @@ import Head from "next/head";
 import Main from "@/components/main";
 import About from "@/components/about";
 import Skills from "@/components/skills";
-import Proyects from "@/components/proyects";
+import Projects from "@/components/projects";
 import Contact from "@/components/contact";
-
+import componentLayout from "@/layout/componentLayout.jsx";
+import Navbar from "@/components/navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -18,12 +19,14 @@ export default function Home() {
         <meta name="" content=""></meta>
         <link rel="icon" href="/favicon.ico"></link>
       </Head>
-
-      <Main />
-      <About />
-      <Skills />
-      <Proyects />
-      <Contact />
+      <Navbar />
+      <div className="w-full flex flex-col justify-center pt-24 ">
+        <Main />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </div>
     </>
   );
 }

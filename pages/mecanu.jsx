@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import mecanuImg from "../public/assets/proyects/mecanu.png";
+import mecanuImg from "../public/assets/projects/mecanu.png";
 import { RiRadioButtonFill } from "react-icons/ri";
 import Link from "next/link";
 export default function mecanu() {
@@ -39,7 +39,8 @@ export default function mecanu() {
           <button className="px-8 py-2 mt-4 mr-8">
             <a
               href="https://www.youtube.com/watch?v=y2llAQlPcPE"
-              target="_blank">
+              target="_blank"
+            >
               Demo
             </a>
           </button>
@@ -89,7 +90,7 @@ export default function mecanu() {
           <p className="underline cursor-pointer">Volver</p>
         </Link>
       */}
-        <Link href="/#proyects" className="scroll-ms-0.5">
+        <Link href="/#projects" className="scroll-ms-0.5">
           <p className="underline cursor-pointer">Volver</p>
         </Link>
       </div>

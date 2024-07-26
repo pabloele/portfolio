@@ -1,16 +1,9 @@
 import React from "react";
-import style from "./main.module.css";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import Link from "next/link";
-import { Bruno_Ace } from "next/font/google";
-
-const bruno_ace = Bruno_Ace({
-  subsets: [],
-  weight: "400",
-});
-
+import { bruno_ace } from "../styles/fonts";
 export default function Main() {
   const handleDefaultMail = () => {
     const email = "pabloelevy@gmail.com";
@@ -37,8 +30,11 @@ export default function Main() {
 
   return (
     <div className={bruno_ace.className}>
-      <div id="main" className="w-full h-screen text-center font-extrabold">
-        <div className="max-w-[1240px] w-full h-full mx-auto p-2 flex justify-center items-center">
+      <div
+        id="main"
+        className="w-full h-[768px] text-center font-extrabold   border-8 shadow-xl shadow-gray-400  flex "
+      >
+        <div className="w-full h-full mx-auto p-2 flex justify-center items-center">
           <div>
             <p className="uppercase text-sm tracking-widest text-gray-600 font">
               FULL STACK DEVELOPER
@@ -58,7 +54,8 @@ export default function Main() {
                 <Link
                   href="https://www.linkedin.com/in/pabloelevy/"
                   target="_blank"
-                  rel="noopener noreferrer">
+                  rel="noopener noreferrer"
+                >
                   <FaLinkedinIn />
                 </Link>
               </div>
@@ -66,18 +63,21 @@ export default function Main() {
                 <Link
                   href="https://github.com/pabloele"
                   target="_blank"
-                  rel="noopener noreferrer">
+                  rel="noopener noreferrer"
+                >
                   <FaGithub />
                 </Link>
               </div>
               <div
                 className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300"
-                onClick={handleDefaultMail}>
+                onClick={handleDefaultMail}
+              >
                 <AiOutlineMail />
               </div>
               <div
                 className="rounded-full shadow-lg shadow-gray-400 p-6 cursor-pointer hover:scale-110 ease-in duration-300"
-                onClick={handleDownload}>
+                onClick={handleDownload}
+              >
                 <BsFillPersonLinesFill />
               </div>
               {/* CV Pablo Levy - fullstack .pdf */}

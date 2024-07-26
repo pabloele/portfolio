@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import portfolioImg from "../public/assets/proyects/portfolio.png";
+import portfolioImg from "../public/assets/projects/portfolio.png";
 import { RiRadioButtonFill } from "react-icons/ri";
 import Link from "next/link";
 export default function mecanu() {
@@ -53,7 +53,7 @@ export default function mecanu() {
           </div>
         </div>
 
-        <Link href="/#proyects" className="scroll-ms-0.5">
+        <Link href="/#projects" className="scroll-ms-0.5">
           <p className="underline cursor-pointer">Volver</p>
         </Link>
       </div>

@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import Navbar from "../components/navbar";
+
 import { Bruno_Ace } from "next/font/google";
 
 const bruno_ace = Bruno_Ace({
@@ -10,7 +10,6 @@ const bruno_ace = Bruno_Ace({
 export default function App({ Component, pageProps }) {
   return (
     <div className={bruno_ace.className}>
-      <Navbar />
       <Component {...pageProps} />
     </div>
   );

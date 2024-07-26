@@ -9,6 +9,7 @@ import contactImg from "../public/assets/contactus.jpg";
 import { useState } from "react";
 import emailjs from "emailjs-com";
 import { useRouter } from "next/router";
+import { bruno_ace } from "@/styles/fonts";
 
 export default function Contact() {
   const router = useRouter();
@@ -146,153 +147,166 @@ export default function Contact() {
     document.body.removeChild(link);
   };
   return (
-    <div id="contact" className="w-full light-screen pt-10  font-extrabold">
-      <div className="max-w-[1240px] m-auto px-2 py-16  ">
-        <div
-          className="flex flex-col ml-4
-        ">
-          <p className="text-xl uppercase text-[#121114] ">{"<Contacto />"}</p>
-          <h2 className="py-4 ">{"Hablemos!"}</h2>
-        </div>
-        <div className="grid lg:grid-cols-5 gap 8">
-          {/* left */}
-          <div className="col-span-2 lg:col:span-2 w-full h-full  shadow-xl shadow-gray-400 rounded-xl p-4">
-            <div className="lg:p-4 w-full ">
-              <div className="rounded-xl hover:scale-105 ease-in duration-300">
-                <Image
-                  src={contactImg}
-                  alt="/"
-                  cover="true"
-                  className="rounded-xl hover:scale-105 ease-in duration-300 "
-                />
-              </div>
-              <div>
-                <h2 className="py-2 ">Pablo Levy</h2>
-                <p>Full Stack Developer</p>
-                <p className="py-4"> </p>
+    <div className={bruno_ace.className}>
+      <div
+        id="contact"
+        className="w-full light-screen pt-10  font-extrabold shadow-xl shadow-gray-400"
+      >
+        <div className="max-w-[1240px] m-auto px-2 py-16  ">
+          <div
+            className="flex flex-col ml-4
+        "
+          >
+            <p className="text-xl uppercase text-[#121114] ">
+              {"<Contacto />"}
+            </p>
+            <h2 className="py-4 ">{"Hablemos!"}</h2>
+          </div>
+          <div className="grid lg:grid-cols-5 gap 8">
+            {/* left */}
+            <div className="col-span-2 lg:col:span-2 w-full h-full  shadow-xl shadow-gray-400 rounded-xl p-4">
+              <div className="lg:p-4 w-full ">
+                <div className="rounded-xl hover:scale-105 ease-in duration-300">
+                  <Image
+                    src={contactImg}
+                    alt="/"
+                    cover="true"
+                    className="rounded-xl hover:scale-105 ease-in duration-300 "
+                  />
+                </div>
                 <div>
-                  <p className="uppercase pt-8 ">{"Open to Work =)"}</p>
-                </div>
-                <div className="flex items-left justify-between py-4">
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
-                    <Link
-                      href="https://www.linkedin.com/in/pabloelevy/"
-                      target="_blank"
-                      rel="noopener noreferrer">
-                      <FaLinkedinIn />
-                    </Link>
+                  <h2 className="py-2 ">Pablo Levy</h2>
+                  <p>Full Stack Developer</p>
+                  <p className="py-4"> </p>
+                  <div>
+                    <p className="uppercase pt-8 ">{"Open to Work =)"}</p>
                   </div>
-                  <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
-                    <Link
-                      href="https://github.com/pabloele"
-                      target="_blank"
-                      rel="noopener noreferrer">
-                      <FaGithub />
-                    </Link>
-                  </div>
-                  <div
-                    onClick={handleDefaultMail}
-                    className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
-                    <AiOutlineMail />
-                  </div>
-                  <div
-                    onClick={handleDownload}
-                    className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
-                    <BsFillPersonLinesFill />
+                  <div className="flex items-left justify-between py-4">
+                    <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
+                      <Link
+                        href="https://www.linkedin.com/in/pabloelevy/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaLinkedinIn />
+                      </Link>
+                    </div>
+                    <div className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200">
+                      <Link
+                        href="https://github.com/pabloele"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaGithub />
+                      </Link>
+                    </div>
+                    <div
+                      onClick={handleDefaultMail}
+                      className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200"
+                    >
+                      <AiOutlineMail />
+                    </div>
+                    <div
+                      onClick={handleDownload}
+                      className="rounded-full shadow-lg shadow-gray-400 p-3 cursor-pointer hover:scale-105 ease-in duration-200"
+                    >
+                      <BsFillPersonLinesFill />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          {/* right */}
-          <div className="col-span-2 lg:col-span-3 w-full h-auto lg:h-full shadow-xl shadow-gray-400 rounded-xl p-4 overflow-y-auto">
-            <div className="flex flex-col gap-4">
-              <form ref={form} onSubmit={sendEmail}>
-                <div className="flex flex-col">
-                  <label className="uppercase text-sm py-2">Nombre</label>
-                  <input
-                    className={
-                      errors.user_name === "invalid"
-                        ? "border-2 rounded-lg p-3 flex border-red-300"
-                        : "border-2 rounded-lg p-3 flex border-gray-300"
-                    }
-                    type="text"
-                    name="user_name"
-                    value={formData.user_name}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <label className="uppercase text-sm py-2">
-                    Teléfono (opcional)
-                  </label>
-                  <input
-                    className="border-2 rounded-lg p-3 flex border-gray-300"
-                    type="text"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <label className="uppercase text-sm py-2">Email</label>
-                  <input
-                    className={
-                      errors.user_email === "invalid"
-                        ? "border-2 rounded-lg p-3 flex border-red-300"
-                        : "border-2 rounded-lg p-3 flex border-gray-300"
-                    }
-                    type="text"
-                    name="user_email"
-                    value={formData.user_email}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <label className="uppercase text-sm py-2">Subject</label>
-                  <input
-                    className={
-                      errors.user_subject === "invalid"
-                        ? "border-2 rounded-lg p-3 flex border-red-300"
-                        : "border-2 rounded-lg p-3 flex border-gray-300"
-                    }
-                    type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <div className="flex flex-col">
-                  <label className="uppercase text-sm py-2">Mensaje</label>
-                  <textarea
-                    className={
-                      errors.user_email === "invalid"
-                        ? "border-2 rounded-lg p-3 border-red-300"
-                        : "border-2 rounded-lg p-3 border-gray-300"
-                    }
-                    // className="border-2 rounded-lg p-3 border-gray-300"
-                    rows="10"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                <button
-                  // type="submit"
-                  className="w-full p-4 text-gray-100 mt-4">
-                  Enviar Mensaje
-                </button>
-              </form>
+            {/* right */}
+            <div className="col-span-2 lg:col-span-3 w-full h-auto lg:h-full shadow-xl shadow-gray-400 rounded-xl p-4 overflow-y-auto">
+              <div className="flex flex-col gap-4">
+                <form ref={form} onSubmit={sendEmail}>
+                  <div className="flex flex-col">
+                    <label className="uppercase text-sm py-2">Nombre</label>
+                    <input
+                      className={
+                        errors.user_name === "invalid"
+                          ? "border-2 rounded-lg p-3 flex border-red-300"
+                          : "border-2 rounded-lg p-3 flex border-gray-300"
+                      }
+                      type="text"
+                      name="user_name"
+                      value={formData.user_name}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <label className="uppercase text-sm py-2">
+                      Teléfono (opcional)
+                    </label>
+                    <input
+                      className="border-2 rounded-lg p-3 flex border-gray-300"
+                      type="text"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <label className="uppercase text-sm py-2">Email</label>
+                    <input
+                      className={
+                        errors.user_email === "invalid"
+                          ? "border-2 rounded-lg p-3 flex border-red-300"
+                          : "border-2 rounded-lg p-3 flex border-gray-300"
+                      }
+                      type="text"
+                      name="user_email"
+                      value={formData.user_email}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <label className="uppercase text-sm py-2">Subject</label>
+                    <input
+                      className={
+                        errors.user_subject === "invalid"
+                          ? "border-2 rounded-lg p-3 flex border-red-300"
+                          : "border-2 rounded-lg p-3 flex border-gray-300"
+                      }
+                      type="text"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <label className="uppercase text-sm py-2">Mensaje</label>
+                    <textarea
+                      className={
+                        errors.user_email === "invalid"
+                          ? "border-2 rounded-lg p-3 border-red-300"
+                          : "border-2 rounded-lg p-3 border-gray-300"
+                      }
+                      // className="border-2 rounded-lg p-3 border-gray-300"
+                      rows="10"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                    />
+                  </div>
+                  <button
+                    // type="submit"
+                    className="w-full p-4 text-gray-100 mt-4"
+                  >
+                    Enviar Mensaje
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="flex justify-center py-6">
-        <Link href="" alt="/">
-          <div className="rounded-full shadow-lg shadow-gray-400 cursor-pointer hover:scale-105 ease-in duration-200">
-            <HiOutlineChevronDoubleUp size={30} className="text-[#5651e5]" />
-          </div>
-        </Link>
+        <div className="flex justify-center py-6">
+          <Link href="" alt="/">
+            <div className="rounded-full shadow-lg shadow-gray-400 cursor-pointer hover:scale-105 ease-in duration-200">
+              <HiOutlineChevronDoubleUp size={30} className="text-[#5651e5]" />
+            </div>
+          </Link>
+        </div>
       </div>
     </div>
   );

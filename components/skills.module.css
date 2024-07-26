@@ -3,3 +3,12 @@
 .titles {
   font-family: "Bruno Ace", cursive;
 }
+
+.scrollbarHide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbarHide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
